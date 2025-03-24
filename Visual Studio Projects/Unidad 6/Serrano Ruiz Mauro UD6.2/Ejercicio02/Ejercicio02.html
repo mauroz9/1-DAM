@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio02</title>
+    <link rel="stylesheet" href="HojaDeEstilo02.css">
+</head>
+<body>
+    <h1>Registro en Foro</h1>
+    <br/><br/>
+    <form action="" name="Formulario Registro" method="">
+        <div id="principal">
+            <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <br/><br/>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="texst" name="apellidos" id="apellidos" required>
+        <br/><br/>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"required>
+        <br/><br/>
+
+        <label for="contrasena">Contraseña</label>
+        <input type="password" name="contrasena" id="contrasena" required>
+        <br/><br/>
+
+        <label for="repetirContrasena">Repetir Contraseña</label>
+        <input type="password" name="repetirContrasena" id="repetirContrasena" required>
+        <br/><br/>
+        </div>
+
+        <label for="sexo">Sexo</label>
+        <br/>
+        <input type="radio" name="sexo" id="sexo" value="H" required>Hombre
+        <input type="radio" name="sexo" id="sexo" value="M" required>Mujer
+        <input type="radio" name="sexo" id="sexo" value="O" required>Otro
+        <br/><br/>
+
+        <label for="fechaNacimiento">Fecha de nacimiento</label>
+        <input type="date" name="fechaNacimiento" id="fechaNacimiento" required>
+        <br/><br/>
+
+        <label for="aficiones">Aficiones</label>
+        <br/>
+        <div id="seleccion">
+            <div id="grupo">
+                <input type="checkbox" name="aficiones" id="aficiones" value="deporte" required>
+                <label for="deporte">Deporte</label>
+                <input type="checkbox" name="aficiones" id="aficiones" value="lectura" required>
+                <label for="lectura">Lectura</label>
+                <input type="checkbox" name="aficiones" id="aficiones" value="cine" required>
+                <label for="cine">Cine</label>
+            </div>
+            <div id="grupo">
+                <input type="checkbox" name="aficiones" id="aficiones" value="viajes" required>
+                <label for="viajes">Viajes</label>
+                <input type="checkbox" name="aficiones" id="aficiones" value="musica" required>
+                <label for="musica">Musica</label>
+                <input type="checkbox" name="aficiones" id="aficiones" value="tecnologia" required>
+                <label for="tecnologia">Tecnologia</label>
+            </div>
+            <div id="grupo">
+                <input type="checkbox" name="aficiones" id="aficiones" value="gimnasio" required>
+                <label for="gimnasio">Gimnasio</label>
+                <input type="checkbox" name="aficiones" id="aficiones" value="comer" required>
+                <label for="comer">Comer</label>
+                <input type="checkbox" name="aficiones" id="aficiones" value="dormir" required>
+                <label for="dormir">Dormir</label>
+            </div>
+            <div id="grupo">
+                <input type="checkbox" name="aficiones" id="aficiones" value="estudiar" required>
+                <label for="estudiar">Estudiar</label>
+                <input type="checkbox" name="aficiones" id="aficiones" value="futbol" required>
+                <label for="futbol">Futbol</label>
+                <input type="checkbox" name="aficiones" id="aficiones" value="otras" required>
+                <label for="otras">Otras</label>
+            </div>
+        </div>
+        <br/><br/>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
