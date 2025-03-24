@@ -1,0 +1,15 @@
+div{
+    text-align: center;
+    width: 1250px;
+    height: 250px;
+    background-color: red;
+    border: 5px dotted yellow;
+    border-radius: 30px;
+    padding: 0%;
+}
+h1{
+    font-style: italic;
+    color: yellow;
+    font-size: 35pt;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

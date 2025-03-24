@@ -1,0 +1,50 @@
+body {
+    background-color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: white;
+    background-color: #0066cc;
+    text-align: center;
+    font-size: 36px;
+    padding: 20px 0;
+}
+
+nav{
+    width: 20%;
+    background-color: #0066cc;
+    color: white;
+    padding: 20px;
+}
+
+nav ul li a{
+    color: white;
+}
+
+.contenedor{
+    display: flex;
+    flex: 1;
+}
+
+main{
+    padding: 20px;
+    color: rgb(49, 49, 49);
+}
+
+main h2{
+    color: #0066cc;
+    font-size: 26px;
+}
+
+footer{
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

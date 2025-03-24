@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(219, 176, 110);
+    color: rgb(219, 176, 110);
+    text-align: center;
+}
+
+#inicio_pagina{
+    font-family: 'Bebas Neue', sans-serif;
+    font-variant: small-caps;
+    font-size: 40pt;
+    color: rgb(219, 176, 110);
+    background-color: rgb(73, 46, 16);
+}
+
+#autor{
+    text-align: center;
+    font-size: 15pt;
+    color: rgb(73, 46, 16);
+    font-weight: 700;
+}
+
+#rima{
+    font-weight: 900;
+    font-size: 30pt;
+    font-variant: small-caps;
+    text-align: left;
+    margin-left: 5%;
+}
+
+p{
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    font-size: 20pt;
+    margin: 5%;
+    line-height: 1.4em;
+}
+
+.recuadro{
+    background-color: rgb(73, 46, 16);
+    margin-left: 27%;
+    margin-right: 27%;
+}

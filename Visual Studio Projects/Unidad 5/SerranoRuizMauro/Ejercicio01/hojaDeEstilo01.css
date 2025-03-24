@@ -1,0 +1,39 @@
+body{
+    width: 85%;
+    margin: 5%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0%;
+    margin: 0 auto;
+    width: 800px;
+    display: flex;
+}
+
+nav ul li{
+    flex-grow: 1;
+    background-color: white;
+    border: black solid 1px;
+    padding: 10px 5px;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+}
+
+nav ul li:hover{
+    background-color: black;
+    color: white;
+}
+
+nav ul li:first-child{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+nav ul li:last-child{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}

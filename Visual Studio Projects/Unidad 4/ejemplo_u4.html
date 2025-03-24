@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+
+        h1{
+            background-color: seagreen;
+            color: aliceblue;
+            text-align: center;
+
+            box-sizing: border-box;
+            width: 50%;
+            height: 80px;
+            padding: 15px;
+            margin: 50px auto;
+            box-shadow: 10px 10px 5px black;
+        }
+
+        main{
+            border: 2px solid green;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            justify-content: space-around;
+        }
+
+        main p{
+            border: 2px solid red;
+            font-size: 50pt;
+
+            flex-basis: 25%;
+            flex-grow: 1;
+        }
+
+        main p+p{
+            flex-grow: 4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Un título</h1>
+    </header>
+    <main>
+        <p>
+            Parrafo 1
+        </p>
+        <p>
+            Parrafo 2
+        </p>
+        <p>
+            Parrafo 3
+        </p>
+        <p>
+            Parrafo 4
+        </p>
+        <p>
+            Parrafo 5
+        </p>
+        <p>
+            Parrafo 6
+        </p>
+        <p>
+            Parrafo 7
+        </p>
+        <p>
+            Parrafo 8
+        </p>
+        <p>
+            Parrafo 9
+        </p>
+    </main>
+</body>
+</html>

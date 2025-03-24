@@ -1,0 +1,32 @@
+body{
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+table{
+    width: 80%;
+    justify-content: center;
+    margin: 50px auto;
+    border: 1px solid greenyellow;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th{
+    background-color: greenyellow;
+    color: white;
+    border: 1px solid greenyellow;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 13pt;
+}
+
+td{
+    border: 1px solid greenyellow;
+    padding: 5px;
+    font-size: 10pt;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(241, 255, 203);
+}

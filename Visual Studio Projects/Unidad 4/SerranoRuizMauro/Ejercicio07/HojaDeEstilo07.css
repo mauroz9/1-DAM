@@ -1,0 +1,23 @@
+main{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5% 10% 5%;
+    text-align: center;
+}
+
+main .bloque{
+    border: solid gray 3px;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5%;
+    flex: 0 0 256px;
+    background-color: gray;
+    margin: 3%;
+}
+
+img{
+    margin-top: 10%;
+    margin-left: 0%;
+    margin-right: 0%;
+}

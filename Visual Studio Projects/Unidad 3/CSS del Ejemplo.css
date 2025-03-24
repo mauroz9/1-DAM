@@ -1,0 +1,24 @@
+h1{
+    font-family:'Comic Sans MS';
+    font-size: 32pt;
+    background-color: aqua;
+    color:aliceblue;
+    text-align: center;
+}
+p{
+    font-family: 'Comic Sans ms';
+    font-size: 12pt;
+    text-align: right;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-weight: 900;
+}
+p{
+    size: 13pt;
+    color: red;
+}
+
+strong{
+    font-size: 1.2em;
+    color: blue;
+}

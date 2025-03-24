@@ -1,0 +1,148 @@
+*{
+    color: #b39b00;
+	font-family: Calibri;
+	box-sizing: border-box;
+}
+
+body{
+	margin:0px auto;
+	width: 85%;
+	min-width: 700px;
+	max-width: 1200px;
+}
+
+header{
+    margin: 0px;
+}
+
+header img{
+    width: 100%;
+}
+
+header nav ul{
+    display: flex;
+    background-color: #ffdd00;
+    list-style: none;
+    width: 100%;
+    height: 60px;
+    margin: -4px;
+    padding: 0px;
+    margin-bottom: 5px;
+}
+
+header nav ul li{
+    text-align: center;
+    color: white;
+    flex: 1 1 25%;
+    font-size: 16pt;
+    margin-top: 17px;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+}
+
+#contenido{
+    display: flex;
+}
+
+#contenido aside{
+    flex: 0 0 20%;
+}
+
+aside li{
+    list-style: none;
+    color: #b39b00;
+    text-align: left;
+    padding-top: 20px;
+	padding-bottom: 10px;
+    font-weight: 900;
+    font-size: 16pt;
+}
+
+.publicidad{
+    text-align: center;
+    color: #b39b00;
+    border: #ffdd00 solid 1px;
+    width: 90%;
+	height: 120px;
+	padding-top: 5%;
+	margin: 10px;
+}
+
+#contenido main{
+    flex: 0 0 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: #ffdd00 solid 1px;
+}
+
+#contenido main h3{
+    text-align: left;
+	font-size: 20pt;
+	font-weight: normal;
+	margin:4px auto;
+}
+
+#contenido main h4{
+    text-align: left;
+	font-size: 10pt;
+	font-weight: normal;
+	margin:4px auto;
+    border-bottom: 1px solid #FEDC00;
+}
+
+#contenido main section{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+section article{
+    flex: 0 0 30%;
+    margin: 1%;
+    background-color: #FEDC00;
+    border:0 solid transparent;
+    border-radius: 15px;
+}
+
+article p{
+    color: white;
+	font-size: 12pt;
+    text-align: left;
+	width: 85%;
+	margin: 20px auto;
+}
+
+article img{
+	width: 100%;	
+}
+
+article .precio{
+    text-align: right;
+    font-size: 18pt;
+    font-weight: 900;
+}
+
+article .cesta{
+    font-size: 14pt;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    font-weight: 900;
+    color: #FEDC00;
+    background-color: white;
+    padding: 5px;
+}
+
+
+footer{
+	background-color: #FEDC00;
+	font-size: 12pt;	
+	color: white;
+	text-align: center;
+
+	width: 100%;
+	padding-top:10px;
+	padding-bottom:10px;	
+}

@@ -1,0 +1,48 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+table{
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+img{
+    width: 25px;
+    height: 25px;
+}
+
+thead{
+    text-align: center;
+    border-bottom: 1px solid red;
+}
+
+thead>tr:first-child{
+    border-bottom: 1px solid black;
+}
+
+th, td{
+    padding: 10px;
+    vertical-align: middle;
+}
+
+tbody>tr:nth-child(odd){
+    background-color: #d4d4d4;
+}
+
+.descenso{
+    border-left: 3px solid red;
+}
+
+.champions{
+    border-left: 3px solid green;
+}
+
+.europe{
+    border-left: 3px solid yellow;
+}
+
+.conference{
+    border-left: 3px solid orange;
+}

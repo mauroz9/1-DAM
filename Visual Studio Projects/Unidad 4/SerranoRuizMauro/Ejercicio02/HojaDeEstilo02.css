@@ -1,0 +1,17 @@
+p{
+    width: 800px;
+    height: 656px;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 0px;
+    background: url(../Ejerciocio02/Recursos/Imagenes/fondo_jovenes.png) no-repeat bottom, url(../Ejerciocio02/Recursos/Imagenes/fondo_trama.png);
+    background-size: 85%;
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    src: url(../Ejerciocio02/Recursos/Fuentes/kristen-itc.ttf);
+    font-family: 'Kristen ITC', 'Berlin Sans FB', Arial, sans-serif;
+    font-size: 35pt;
+}

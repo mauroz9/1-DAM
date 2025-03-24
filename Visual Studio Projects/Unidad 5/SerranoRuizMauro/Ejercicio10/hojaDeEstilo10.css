@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, lightblue, lightpink);
+}
+
+nav {
+    position: fixed;
+    top: 100px;
+    left: -300px;
+    height: 100%;
+    width: 300px;
+    margin: 20px auto;
+    max-width: 400px;
+    transition: transform 0.5s ease;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: block;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    background-color: #0cb2ff;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li ul {
+    display: none;
+    background-color: #444;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s ease-in-out;
+}
+
+nav ul li:hover ul {
+    display: block;
+    animation: apertura 1s forwards;
+}
+
+nav ul li ul li a {
+    padding: 10px;
+    background-color: #555;
+}
+
+nav ul li ul li a:hover {
+    background-color: #666;
+}
+
+nav ul li ul.slide-out {
+    animation: cierre 1s forwards;
+}
+
+@keyframes apertura {
+    from {
+        max-height: 0;
+    }
+    to {
+        max-height: 500px;
+    }
+}
+
+@keyframes cierre {
+    from {
+        max-height: 500px;
+    }
+    to {
+        max-height: 0;
+    }
+}
+
+.mostrar-menu{
+    margin: 50px auto;
+    display: flex;
+    justify-content: left;
+}
+
+.mostrar-menu a{
+    text-decoration: none;
+}
+
+.mostrar-menu a h1{
+    background-color: #0cb2ff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#menu:target {
+    transform: translateX(300px);
+}
+
+#menu:target .mostrar-menu{
+    transform: translateX(-300px);
+}

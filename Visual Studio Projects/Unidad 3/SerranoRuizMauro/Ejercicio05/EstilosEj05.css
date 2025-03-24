@@ -1,0 +1,71 @@
+.fuente1{
+    font-family: 'Arial Black', Gadget, sans-serif; 
+}
+
+.fuente2{
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+.fuente3{ 
+    font-family: 'Georgia', serif;
+}
+
+.fuente4{ 
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+.fuente5{ 
+    font-family: 'Verdana', Geneva, sans-serif; 
+}
+
+.fuente6{ 
+    font-family: 'Tahoma', sans-serif; 
+}
+
+.fuente7{ 
+    font-family: 'Lucida Console', Monaco, monospace; 
+}
+
+
+.color1{ 
+    color: #FF5733; 
+} 
+
+.color2{
+     color: #33FF57; 
+} 
+
+.color3{
+     color: #3357FF; 
+}
+
+.color4{
+     color: #FF33A1; 
+} 
+
+.color5{
+     color: #A133FF; 
+} 
+
+.color6{
+     color: #FFC300; 
+} 
+
+.color7{
+     color: #33FFF5; 
+} 
+
+
+h1{
+    word-spacing: 0.3em;
+    font-size: 7em;
+    text-align: center;
+    margin: 0%;
+}
+
+p{
+  font-size: 13em;
+  text-align: center;
+  line-height: 1.6em;
+  margin: 5%;
+}

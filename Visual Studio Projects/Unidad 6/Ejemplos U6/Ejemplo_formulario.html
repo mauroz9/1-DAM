@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos formulario</title>
+
+    <style>
+        fieldset {
+            margin-top: 30px;
+            div.aficiones {
+                display: flex;
+                width: 50%;
+                justify-content: space-between;
+                div.colAficiones {
+                    flex: 0 0 30%;
+                }
+            }
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"]:checked + label {
+            color: green;
+        }
+
+        input[type="checkbox"]:not(:checked) + label {
+            color: red; 
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Formulario de registro</h1>
+    <form action="" name="registro" method="">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" autocomplete required autofocus pattern="{a-zA-Z}" placeholder="Introduzca su nombre" name="nombre" id="nombre">
+        <input type="submit" value="enviar"></input>
+
+        <fieldset>
+            <legend>Radio Inputs - Genero</legend>
+
+            <label for="genero">Indiqeue su genero</label> <br>
+            <input type="radio" name="genero" id="" value="M">Masculino <br>
+            <input type="radio" name="genero" id="" value="F">Femenino <br>
+            <input type="radio" name="genero" id="" value="N">Prefiero no decirlo <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Intereses</legend>
+            <p for="">Indique sus intereses</p>
+
+            <div class="aficiones">
+                <div class="colAficiones">
+
+                    <input type="checkbox" name="futbol" value="futbol" id=""> 
+                    <label for="futbol">Futbol</label> <br>
+        
+                    <input checked type="checkbox" name="programar" value="programar" id="">
+                    <label for="programar">Programar</label> <br>
+        
+                    <input checked type="checkbox" name="casino" value="casino" id=""> 
+                    <label for="casino">Casino</label> <br>
+        
+                    <input checked type="checkbox" name="f1" value="f1" id=""> 
+                    <label for="f1">Formula 1</label> <br>
+
+                </div>
+
+                <div class="colAficiones">
+                    <input type="checkbox" name="tenis" value="tenis" id=""> 
+                    <label for="tenis">tenis</label> <br>
+        
+                    <input type="checkbox" name="paddle" value="paddle" id=""> 
+                    <label for="paddle">Paddle</label> <br>
+        
+                    <input type="checkbox" name="cripto" value="cripto" id=""> 
+                    <label for="cripto">Invertir en Cripto</label> <br>
+        
+                    <input type="checkbox" name="satan" value="satan" id=""> 
+                    <label for="satan">Ritos satanicos</label> <br>
+                </div>
+
+                <div class="colAficiones">
+
+                    <input type="checkbox" name="futbol" value="futbol" id=""> 
+                    <label for="futbol">Futbol</label> <br>
+        
+                    <input type="checkbox" name="programar" value="programar" id="">
+                    <label for="programar">Programar</label> <br>
+        
+                    <input type="checkbox" name="casino" value="casino" id=""> 
+                    <label for="casino">Casino</label> <br>
+        
+                    <input type="checkbox" name="f1" value="f1" id=""> 
+                    <label for="f1">Formula 1</label> <br>
+
+                </div>
+                
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Provincias</legend>
+            <label for="provincia"></label> Indique su provincia <br>
+            <select name="provincia" id="">
+                <option value="SE" selected> Sevilla </option>
+                <option value="CA" > Cadiz </option>
+                <option value="GR"> Granada </option>
+                <option value="CO"> Cordoba </option>
+                <option value="HU"> Huelva </option>
+                <option value="MA"> Malaga </option>
+                <option value="AL"> Almeria </option>
+                <option value="JA"> Jaen </option>
+            </select>
+        </fieldset>
+
+    </form>
+</body>
+</html>

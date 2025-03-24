@@ -1,0 +1,25 @@
+body{
+    width: 85%;
+    margin: 5%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0 auto;
+}
+
+nav ul li{
+    flex-grow: 1;
+    border: solid black 1px;
+    text-align: center;
+    padding: 10px;
+    background-image: url(../Ejercicio02/Recursos/fondodoble.png);
+    text-transform: uppercase;
+}
+
+nav ul li:hover{
+    background-position: bottom;
+}

@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+}
+
+#envoltorio{
+    width: 100%;
+    margin: 0px auto;
+    min-width: 650px;
+}
+
+header{
+    width: 100%;
+}
+
+#envoltorio header h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size: 40pt;
+    color: white;
+    background-color: rgb(0, 119, 255);
+    letter-spacing: 3px;
+    padding: 3%;
+}
+
+footer{
+    width: 100%;
+}
+
+#envoltorio footer p{
+    font-family: sans-serif;
+    padding: 3px;
+    font-size: 15pt;
+    color: white;
+    background-color: rgb(83, 165, 80);
+}
+
+#menu{
+    margin: 0%;
+    font-size: 20pt;
+    color: white;
+    background-color: rgb(83, 165, 80);
+    padding: 1%;
+}
+
+#contenido{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+	flex-direction: row;
+}
+
+#contenido nav{
+    padding: 1%;
+    flex: 1 1 20%;
+    color: white;
+    background-color: rgb(0, 119, 255);
+}
+
+#contenido aside{
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    flex: 1 1 20%;
+    color: white;
+    background-color: rgb(0, 119, 255);
+    
+}
+
+.galeria{
+    text-align: center;
+}
+
+#contenido aside .galeria img{
+    width: 70%;
+    text-align: center;
+} 
+
+.publicidad{
+    padding: 3%;
+    text-align: center;
+    background-color: white;
+    border-radius: 50px;
+    color: black;
+}
+
+#contenido aside .publicidad img{
+    width: 70%;
+} 
+
+#contenido main{
+    padding-left: 5%;
+    flex: 1 1 60%;
+}

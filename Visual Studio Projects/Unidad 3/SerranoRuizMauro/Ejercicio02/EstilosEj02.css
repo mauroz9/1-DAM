@@ -1,0 +1,64 @@
+body{
+    font-family: "Fira Sans Extra Condensed", sans-serif;
+    line-height: 1.6em;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+}
+
+p{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+span{
+    font-style: italic;
+}
+
+h2{
+    margin-left: 20%;
+    margin-right: 20%;
+    font-weight: 900;
+}
+
+#barra_superior{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    word-spacing: -2px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#título{
+    text-align: center;
+    font-size: 40px;
+    word-spacing: -2px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#subtítulo{
+    text-align: center;
+    color: gray;
+    font-size: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-weight: 700;
+}
+
+#recursos{
+    text-align: center;
+}
+
+#lista{
+    margin-left: 20%;
+    margin-right: 20%;
+    font-weight: 900;
+}
+
+#introducción{
+    margin-left: 20%;
+    margin-right: 20%;
+    font-weight: 900;
+}

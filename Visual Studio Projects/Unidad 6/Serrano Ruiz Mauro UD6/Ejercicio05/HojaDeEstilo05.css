@@ -1,0 +1,45 @@
+table {
+    border-collapse: collapse;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+td {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    width: 45px;
+    height: 45px;
+}
+tr:nth-child(n+2):nth-child(-n+9):nth-child(odd) td:nth-child(n+2):nth-child(-n+9):nth-child(even),
+tr:nth-child(n+2):nth-child(-n+9):nth-child(even) td:nth-child(n+2):nth-child(-n+9):nth-child(odd) {
+    background-color: #c99265;
+}
+
+tr:nth-child(n+2):nth-child(-n+9):nth-child(odd) td:nth-child(n+2):nth-child(-n+9):nth-child(odd),
+tr:nth-child(n+2):nth-child(-n+9):nth-child(even) td:nth-child(n+2):nth-child(-n+9):nth-child(even) {
+    background-color: #8a552b;
+}
+
+tr:nth-child(n+2):nth-child(-n+3) td:nth-child(n+2):nth-child(-n+9){
+    color: black;
+    font-size: 25pt;
+    padding: 0px;
+}
+
+tr:nth-child(n+8):nth-child(-n+9) td:nth-child(n+2):nth-child(-n+9){
+    color: white;
+    font-size: 25pt;
+    padding: 0px;
+}
+
+tr:nth-child(1) td:nth-child(1),
+tr:nth-child(1) td:nth-child(10),
+tr:nth-child(10) td:nth-child(1),
+tr:nth-child(10) td:nth-child(10) {
+    
+    background-color: white;
+    color: black;
+}
+
