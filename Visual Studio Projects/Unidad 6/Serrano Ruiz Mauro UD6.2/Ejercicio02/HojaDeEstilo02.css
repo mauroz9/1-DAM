@@ -42,16 +42,14 @@ form>label {
 }
 
 #seleccion{
-    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    width: 100%;
     justify-content: space-between;
 }
 
 #grupo{
-    width: 100%;
-    display: flex;
-    align-items: center; 
+    flex: 0 0 30%;
+    margin: 5px;
 }
 
 button{
