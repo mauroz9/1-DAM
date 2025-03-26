@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Oficina {
-	private List <Trastero> listaTrasteros = new ArrayList <Trastero> ();
+	private List <Trastero> listaTrasteros;
 
 	public Oficina(List<Trastero> listaTrasteros) {
 		super();

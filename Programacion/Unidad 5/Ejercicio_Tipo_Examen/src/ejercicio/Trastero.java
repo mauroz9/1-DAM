@@ -63,13 +63,31 @@ public class Trastero implements Comparable <Trastero>{
 	}
 
 	@Override
-	public int compareTo(Trastero o) {
-		if(this.numRas < o.numRas) {
+	public int compareTo(Trastero t) {
+	
+//		Aquí se hace lo mismo pero con los compare de las variables
+////		int comp = Integer.compare(this.numRas, t.numRas);
+////		if( comp == 0) {
+////			return Double.compare(this.precio, t.precio);
+////		}
+		
+		if(this.numRas < t.numRas) {
 			return -1;
-		}else if(this.numRas > o.numRas){
-			return 1;
+		}else {
+			if(this.numRas > t.numRas){
+				return 1;
+			} else {
+				if(this.precio < t.precio) {
+					return -1;
+				}else {
+					if(this.precio > t.precio) {
+						return 1;
+					}else {
+						return 0;
+					}
+				}
+			}
 		}
-		return 0;
 	}
 	
 	
