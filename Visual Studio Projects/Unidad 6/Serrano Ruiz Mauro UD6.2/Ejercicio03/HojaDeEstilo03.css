@@ -1,172 +1,55 @@
-/* Reset default styles and set a clean base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #f5f5f5;
 }
 
 main {
-    width: 100%;
-    max-width: 800px; /* Increased width to accommodate two columns */
-    background-color: #fff;
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    text-align: left; /* Title aligned to the left */
     color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Style for the form */
+p.ayuda{
+    display: none;
+}
+
 form {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px;
-}
-
-/* Position the fieldsets in the correct columns */
-form fieldset:nth-child(1) { /* Nombre y apellidos */
-    grid-column: 1;
-    grid-row: 1;
-}
-
-form fieldset:nth-child(2) { /* Dirección */
-    grid-column: 2;
-    grid-row: 1;
-}
-
-form fieldset:nth-child(3) { /* Email */
-    grid-column: 1;
-    grid-row: 2;
-}
-
-form fieldset:nth-child(4) { /* Teléfono */
-    grid-column: 2;
-    grid-row: 2;
-}
-
-form fieldset:nth-child(5) { /* Submit button */
-    grid-column: 1 / 3; /* Span both columns */
-    grid-row: 3;
+    width: 100%;
+    display: flex;
+    background-color: #f9f9f9;
 }
 
 fieldset {
     border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin: 0;
+    flex: 0 1 50%;
 }
 
-/* Style for the section titles (labels with class "titulo") */
-label.titulo {
+.titulo {
     font-weight: bold;
-    font-size: 1.1em;
-    color: #333;
+    margin-bottom: 15px;
+    font-size: 13pt;
 }
 
-/* Red asterisk for required fields */
-span.requerido {
+.requerido {
     color: red;
-    font-weight: bold;
 }
 
-/* Style for the div containing inputs */
-fieldset div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-/* Style for input fields and select elements */
 input, select {
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 5px;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 1em;
-    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0px;
 }
 
-/* "Nombre y apellidos" section: three inputs side by side */
-#nombre, #apellido1, #apellido2 {
-    width: calc(33.33% - 10px); /* Three inputs side by side */
-}
-
-/* "Dirección" section */
-#direccion {
-    width: 100%; /* Full width for the street address */
-}
-
-#codigopostal, #municipio {
-    width: calc(50% - 7.5px); /* Two inputs side by side */
-}
-
-#provincia, #pais {
-    width: calc(50% - 7.5px); /* Two dropdowns side by side */
-}
-
-/* "Email" section */
-#email {
-    width: 100%;
-}
-
-/* "Teléfono" section */
-#telefonofijo, #telefonomovil {
-    width: calc(50% - 7.5px); /* Two inputs side by side */
-}
-
-/* Style for the labels of individual inputs (below the inputs) */
-label[for="nombre"],
-label[for="apellido1"],
-label[for="apellido2"],
-label[for="direccion"],
-label[for="codigopostal"],
-label[for="municipio"],
-label[for="provincia"],
-label[for="pais"],
-label[for="telefonofijo"],
-label[for="telefonomovil"] {
-    font-size: 0.9em;
-    color: #666;
-    text-align: left;
-    width: 100%;
-}
-
-/* Hide the label for the email input (not present in the image) */
-label[for="email"] {
-    display: none;
-}
-
-/* Style for the helper text */
-p.ayuda {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 5px;
-}
-
-/* Style for the submit button */
-input[type="submit"] {
-    align-self: flex-end;
-    padding: 10px 20px;
-    background-color: #e0e0e0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    color: #333;
-}
-
-input[type="submit"]:hover {
-    background-color: #d0d0d0;
-}

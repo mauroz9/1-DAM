@@ -131,11 +131,9 @@ public class Library {
 		return sortedList;
 	}
 	
-	public List <Book> orderByPubYear(){
-		List <Book> sortedList = new ArrayList <Book> (bookList);
-		
-		Collections.sort(sortedList, new CompareByYear());
-		
+	public Set <Book> orderByPubYear(){
+		Set <Book> sortedList = new TreeSet <Book> (new CompareByYear());
+		sortedList.addAll(bookList);
 		return sortedList;
 	}
 	
