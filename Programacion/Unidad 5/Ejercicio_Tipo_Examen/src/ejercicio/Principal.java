@@ -44,7 +44,7 @@ public class Principal {
 			System.out.println("8. Ordenar la lista por precio");
 			System.out.println("9. Ver trasteros libres");
 			
-			opcion = sc.nextInt();
+			opcion = Integer.parseInt(sc.nextLine());
 			
 			switch(opcion) {
 				case 0:
@@ -53,13 +53,13 @@ public class Principal {
 					
 				case 1:
 					System.out.println("Introduzca los metros cuadrados");
-					espacio = sc.nextDouble();
+					espacio = Double.parseDouble(sc.nextLine());
 					System.out.println("Introduzcla la dirección");
 					calle = sc.nextLine();
 					System.out.println("Introduzca el número de trastero");
-					numTra = sc.nextInt();
+					numTra = Integer.parseInt(sc.nextLine());
 					System.out.println("Introduzca el precio");
-					precio = sc.nextDouble();
+					precio = Double.parseDouble(sc.nextLine());
 					
 					
 					t = new Trastero (espacio, calle, numTra, precio, true);

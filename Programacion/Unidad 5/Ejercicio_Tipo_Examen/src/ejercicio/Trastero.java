@@ -67,9 +67,10 @@ public class Trastero implements Comparable <Trastero>{
 	
 //		Aquí se hace lo mismo pero con los compare de las variables
 ////		int comp = Integer.compare(this.numRas, t.numRas);
-////		if( comp == 0) {
-////			return Double.compare(this.precio, t.precio);
+////		if( comp != 0) {
+////			return comp;
 ////		}
+//		return Double.compare(this.precio, t.precio);
 		
 		if(this.numRas < t.numRas) {
 			return -1;
