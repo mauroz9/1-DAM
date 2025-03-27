@@ -35,7 +35,7 @@
 			width: 80%;
 			margin: 0 auto;
 			padding: 5px;
-			border: 3px solid yellow;
+			border: 5px solid yellow;
 			font-family: Arial, Helvetica, sans-serif;
 			color: white;
 			font-size: 10pt;
@@ -70,7 +70,6 @@
 
 		label {
 			margin-bottom: 10px;
-			display: flex;
 		}
 
 		hr {
@@ -83,25 +82,46 @@
 		}
 
 		table{
+			border: 5px solid yellow;
 			width: 65%;
 			margin: 0 auto;
-			border: 1px solid yellow;
-			font-family: Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
 			color: white;
 			text-align: center;
-
-		}
-
-		tr{
 			background-color: #FE840E;
-			border: 1px solid yellow
-		}
-		
-		th,tr{
-			border-collapse: collapse;
-			border: 1px solid yellow;
 		}
 
+		caption {
+			font-size: 1.5em;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		thead {
+			background-color: #FE840E;
+			font-weight: bold;
+			border-bottom: 2px solid yellow;
+		}
+
+		th, td {
+			font-family: Arial, Helvetica, sans-serif;
+			border: 1px solid yellow;
+			padding: 10px;
+			vertical-align: middle;
+		}
+
+		th:first-child, td:first-child {
+			width: 55%;
+		}
+
+		th:not(:first-child), td:not(:first-child) {
+			width: 15%;
+		}
+
+		tfoot {
+			text-align: left;
+			font-size: 0.7em;
+		}
 
 	</style>
 	<body>
@@ -122,12 +142,14 @@
 				<input type="radio" name="genero" value="hombre" required>Hombre
 				<input type="radio" name="genero" value="mujer" required>Mujer
 				<input type="radio" name="genero" value="nobinario" required>No binario
-				
+				<br/><br/>
 
 				<label for="inicioreserva">Inicio de la reserva</label>
 				<input type="datetime-local" name="inicioreserva" required>
 				<label for="finreserva">Fin de la reserva</label>
 				<input type="datetime-local" name="finreserva" required>
+				<br/><br/>
+
 				<label for="tematica">¿Qué temática de disfraz desea alquilar?</label>
 				<div id="tematica">
 					<div id="grupo">
@@ -189,49 +211,53 @@
 		<hr />
 
 		<table>
-			<thead>Tarifas 2022</thead>			
-			
-				<th>Categoría</th>
-				<th>Traje</th>
-				<th>Máscara</th>
-				<th>Completo</th>
-			
-				<td>Animales, plantas, objetos</td>
-				<td>15€</td>
-				<td>15€</td>
-				<td>25€</td>
-			
-				<td>Personas y personajes</td>
-				<td>10€</td>
-				<td>10€</td>
-				<td>15€</td>
-			
-				<td>Vehículos</td>
-				<td>15€</td>
-				<td>15€</td>
-				<td>25€</td>
-			
-				<td>Inclasificables</td>
-				<td>20€</td>
-				<td>20€</td>
-				<td>35€</td>
-			
-				<td>Envío</td>
-				<td>Península: 10€.</td>
-				<td></td>			
-				<td></td>			
-			
-				<td>Otros destinos: consultar</td>			
-				<td></td>			
-				<td></td>			
-				<td></td>			
-			
-				<td>NOTA: Todos los precios son por día de alquiler, incluyen IVA, servicio de limpieza y desinfección. Envío no incluido</td>
-				<td></td>			
-				<td></td>			
-				<td></td>			
-			
-			
+			<caption>Tarifas 2022</caption>
+			<thead>
+				<tr>
+					<th>Categoría</th>
+					<th>Traje</th>
+					<th>Máscara</th>
+					<th>Completo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Animales, plantas, objetos</td>
+					<td>15€</td>
+					<td>15€</td>
+					<td>25€</td>
+				</tr>
+				<tr>
+					<td>Personas y personajes</td>
+					<td>10€</td>
+					<td>10€</td>
+					<td>15€</td>
+				</tr>
+				<tr>
+					<td>Vehículos</td>
+					<td>15€</td>
+					<td>15€</td>
+					<td>25€</td>
+				</tr>
+				<tr>
+					<td>Inclasificables</td>
+					<td>20€</td>
+					<td>20€</td>
+					<td>35€</td>
+				</tr>
+				<tr>
+					<td rowspan="2">Envío: </td>
+					<td colspan="3">Península: 10€</td>
+				</tr>
+				<tr>
+					<td colspan="3">Otros destinos: consultar</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="4">NOTA: Todos los precios son por día de alquiler, incluyen IVA, servicio de limpieza y desinfección. Envío no incluido.</td>
+				</tr>
+			</tfoot>
 		</table>
 	</body>
 </html>
