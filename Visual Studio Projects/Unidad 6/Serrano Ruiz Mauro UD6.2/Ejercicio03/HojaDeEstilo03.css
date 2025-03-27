@@ -103,3 +103,11 @@ fieldset#lastField>input {
     font-weight: bold;
     font-size: 15px;
 }
+
+fieldset:hover{
+    background-color: #FF9;
+}
+
+input:focus{
+    border: 2px solid #E6B700;
+}
