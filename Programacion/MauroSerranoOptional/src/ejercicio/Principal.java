@@ -42,7 +42,7 @@ public class Principal {
 		
 		GestorEmpleados ge = new GestorEmpleados(listaEmpleados);
 		
-		int opcion, id, antiguedad, idMod, idEli, idBuscar;
+		int opcion, id, antiguedad;
 		double salario;
 		String nombre, departamento;
 		
@@ -85,45 +85,57 @@ public class Principal {
 					
 					//Instaciamos un optional para comprobar si se ha añadido el empleado o ha ocurrido
 					// un error porque ya existe uno con ese ID asignado.
-					Optional<Empleado> nuevoEmp = ge
-							.agregarEmpleado(new Empleado(id, nombre, departamento, salario, antiguedad));
-					nuevoEmp.ifPresentOrElse(e -> System.out.println("Empleado agregado: " + e),
-							() -> System.out.println("Error: Ya exite un empleado con ese ID"));
+					Optional<Empleado> nuevoEmp = ge.agregarEmpleado(new Empleado(id, nombre, departamento, salario, antiguedad));
+					
+					if(nuevoEmp.isPresent()) {
+			            System.out.println("Empleado agregado: " + nuevoEmp.get());
+			        } else {
+			            System.out.println("Error: Ya existe un empleado con ese ID");
+			        }
 					break;
 
 				case 2:
 					// Eliminar empleado
 					System.out.print("ID del empleado a eliminar: ");
-					idEli = Integer.parseInt(sc.nextLine());
-					Optional<Empleado> eliminado = ge.eliminarEmpleado(idEli);
+					id = Integer.parseInt(sc.nextLine());
+					Optional<Empleado> eliminado = ge.eliminarEmpleado(id);
 
-					eliminado.ifPresentOrElse(e -> System.out.println("Empleado eliminado: " + e),
-							() -> System.out.println("No se encontró empleado con ID " + idEli));
+					if(eliminado.isPresent()) {
+			            System.out.println("Empleado eliminado: " + eliminado.get());
+			        } else {
+			            System.out.println("No se encontró empleado con ID " + id);
+			        }
 					break;
 					
 				case 3:
 					System.out.print("Introduzca el ID del empleado a modificar ");
-                    idMod = Integer.parseInt(sc.nextLine());
+                    id = Integer.parseInt(sc.nextLine());
                     System.out.print("Introduzca el nuevo salario:");
                     salario = Double.parseDouble(sc.nextLine());
-                    Optional<Empleado> modificado = ge.modificarSueldo(idMod, salario);
+                    Optional<Empleado> modificado = ge.modificarSueldo(id, salario);
                     
                     // Igual que anteriormente, instaciamos un optional para comprobar si se han realizado 
                     //los cambios en el empleado o ocurrido un error porque no existe uno con ese ID asignado.
-                    modificado.ifPresentOrElse(e -> System.out.println("Salario actualizado: " + e),
-                    	() -> System.out.println("No se encontró empleado con ID " + idMod));
+                    if(modificado.isPresent()) {
+                        System.out.println("Salario actualizado: " + modificado.get());
+                    } else {
+                        System.out.println("No se encontró empleado con ID " + id);
+                    }
                     break;
                     
                     
 				case 4:
 					System.out.print("Introudzca el ID del empleado");
-                    idBuscar = Integer.parseInt(sc.nextLine());
-                    Optional<Empleado> encontrado = ge.buscarId(idBuscar);
+                    id = Integer.parseInt(sc.nextLine());
+                    Optional<Empleado> encontrado = ge.buscarId(id);
                     
                     // Instaciamos un optional para comprobar si se ha encontrado al empleado o ha
 					// ocurrido un error porque no existe uno con ese ID asignado.
-                    encontrado.ifPresentOrElse(e -> System.out.println("Empleado encontrado:\n" + e),
-                        () -> System.out.println("No se encontró empleado con ID " + idBuscar));
+                    if(encontrado.isPresent()) {
+                        System.out.println("Empleado encontrado:\n" + encontrado.get());
+                    } else {
+                        System.out.println("No se encontró empleado con ID " + id);
+                    }
                     break;
                     
 				case 5:

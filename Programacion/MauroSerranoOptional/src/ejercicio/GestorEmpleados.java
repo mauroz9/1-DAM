@@ -41,21 +41,25 @@ public class GestorEmpleados {
 	}
 	
 	//Eliminamos un empleado, para el que devolvemos un Optional en caso de que no se
-	//encuentre al empleado buscado. (Estamos utilizando lambda).
-    public Optional<Empleado> eliminarEmpleado(int id) {
-        Optional<Empleado> emp = buscarId(id);
-        emp.ifPresent(e -> listaEmpleados.remove(e));
-        return emp;
-    }
+	//encuentre al empleado buscado.
+	public Optional<Empleado> eliminarEmpleado(int id) {
+		Optional<Empleado> emp = buscarId(id);
+		if (emp.isPresent()) {
+			listaEmpleados.remove(emp.get());
+		}
+		return emp;
+	}
     
     //Modificar sueldo para el que devolvemos un Optional en caso de que no se
-	//encuentre al empleado buscado. (Estamos utilizando lambda).
-    public Optional<Empleado> modificarSueldo(int id, double nuevoSalario) {
+	//encuentre al empleado buscado.
+	public Optional<Empleado> modificarSueldo(int id, double nuevoSalario) {
         Optional<Empleado> emp = buscarId(id);
-        emp.ifPresent(e -> e.setSalario(nuevoSalario));
+        if(emp.isPresent()) {
+            emp.get().setSalario(nuevoSalario);
+        }
         return emp;
     }
-    
+	
     //Devolvemos una lista de empleados filtrada por departamento pero utilizamos
     //el metodo .ofNullable para comprobar que el empleado no tiene el campo de 
     //departamento con null, y si se cumple el .ifPresent (que e.getDepartamento() != null),
@@ -94,7 +98,7 @@ public class GestorEmpleados {
     public void imprimirLista() {
         Iterator<Empleado> it = listaEmpleados.iterator();
         
-        System.err.println("Lista de empleados:");
+        System.out.println("Lista de empleados:");
         while(it.hasNext()) {
         	Empleado e = it.next();
         	System.out.println(e);
@@ -137,14 +141,14 @@ public class GestorEmpleados {
 
     //Ordenar por ID (orden natural)
     public List<Empleado> ordenarPorId() {
-    	List<Empleado> listaOrdenada = new ArrayList<>();
+    	List<Empleado> listaOrdenada = new ArrayList<Empleado>(listaEmpleados);
         Collections.sort(listaOrdenada);
         return listaOrdenada;
     }
     
     //Ordenar por Antigüedad (orden no natural)
     public List<Empleado> ordenarPorAntigüedad() {
-    	List<Empleado> listaOrdenada = new ArrayList<>();
+    	List<Empleado> listaOrdenada = new ArrayList<Empleado>(listaEmpleados);
         Collections.sort(listaOrdenada, new CompararPorAntigüedad());
         return listaOrdenada;
     }
