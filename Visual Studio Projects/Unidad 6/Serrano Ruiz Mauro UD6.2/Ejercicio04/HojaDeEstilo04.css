@@ -44,10 +44,14 @@ fieldset div{
     margin-bottom: 10px;
 }
 
-fieldset div p.ayuda{
-    display: inherit;
+p.ayuda{
     padding: 10px;
-    width: 20%;
+    width: 30%;
+    display: none; 
+}
+
+fieldset:hover p.ayuda {
+    display: block;
 }
 
 fieldset>div>input, select, label{
@@ -61,14 +65,30 @@ label{
 }
 
 input.dif{
-    width: 30%;
+    width: 50%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+div.row > div.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 50%;
+}
+
+div.row > div.col input,
+div.row > div.col select {
+    width: 50%;
+    height: 30px;
 }
 
 fieldset:hover{
     background-color: #FF9;
-    .p.ayuda{
-        display:inherit;
-    }
 }
 
 input:focus{

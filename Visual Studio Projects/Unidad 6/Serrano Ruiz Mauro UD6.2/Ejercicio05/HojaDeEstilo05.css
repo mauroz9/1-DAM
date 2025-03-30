@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+main{
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    padding: 15px;
+}
+
+
+fieldset {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+legend {
+    color: white;
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 15px;
+    background-color: rgb(156, 156, 156);
+    border-radius: 5px;
+}
+
+.grupo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: rgb(156, 156, 156);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 90%;
+    padding: 12px 15px;
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 5px;
+    background: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+    background: white;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(156, 156, 156);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgb(126, 126, 126);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
