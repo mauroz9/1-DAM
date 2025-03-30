@@ -60,13 +60,18 @@ public class GestorEmpleados {
     //el metodo .ofNullable para comprobar que el empleado no tiene el campo de 
     //departamento con null, y si se cumple el .ifPresent (que e.getDepartamento() != null),
     //ya se comparan los departamentos y se añade o no a la lista.
+    //aplicamos tambien una transformacion con .map para que departamento se encuentre en 
+    //mayusculas
     public List<Empleado> buscarPorDepartamento(String departamento) {
         List<Empleado> resultado = new ArrayList<Empleado>();
+        Optional<String> o = Optional.of(departamento);
+        Optional<String> mayus = o.map(String::toUpperCase);
+        
         for (Empleado e : listaEmpleados) {
             Optional<String> existe = Optional.ofNullable(e.getDepartamento());
             
             existe.ifPresent(dep -> {
-                if (dep.equals(departamento)) {
+                if (dep.equalsIgnoreCase(departamento)) {
                     resultado.add(e);
                 }
             });
