@@ -1,0 +1,95 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    color: #333;
+}
+
+.contenedor-formulario {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    margin: 20px 0;
+}
+
+.titulo-formulario {
+    margin: 0 0 25px 0;
+    color: #333;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+}
+
+.formulario-reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 14px;
+    color: #666;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #999;
+    background-color: white;
+}
+
+.campos-fecha {
+    display: flex;
+    gap: 15px;
+}
+
+.campo-fecha {
+    flex: 1;
+}
+
+.boton-enviar {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.boton-enviar:hover {
+    background-color: #444;
+}
+
+.icono-calendario {
+    position: relative;
+}
+
+.icono-calendario::after {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
