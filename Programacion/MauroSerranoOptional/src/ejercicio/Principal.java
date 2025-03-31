@@ -56,7 +56,7 @@ public class Principal {
 			System.out.println("3. Modificar un empleado");
 			System.out.println("4. Buscar un empleado por su ID");
 			System.out.println("5. Filtrar por departamento");
-			System.out.println("6. LIstar a todos los empleados");
+			System.out.println("6. Listar a todos los empleados");
 			System.out.println("7. Mostrar a los empleados mejor pagados");
 			System.out.println("8. Ordenar por ID");
 			System.out.println("9. Ordenar por Antigüedad");
