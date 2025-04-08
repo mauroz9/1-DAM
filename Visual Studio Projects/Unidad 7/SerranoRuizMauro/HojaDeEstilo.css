@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'LinLibertine_R';
+    src: url(../RecursosGenerales/Fuentes/FuenteTexto/LinLibertine_R.ttf);
+}
+
+@font-face {
+    font-family: 'Pervitina-Dex-FFP';
+    src: url(../RecursosGenerales/Fuentes/FuenteTexto/Pervitina-Dex-FFP.ttf);
+}
+
+body {
+    background-color: rgb(154, 1, 1);
+    font-family: 'LinLibertine_R';
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+.navbar-dark .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .nav-link:hover {
+    transform: scale(1.05);
+}
+
+.navbar-dark .nav-link::after {
+    transition: width 0.3s ease;
+}
+
+.navbar-dark .nav-link:hover::after {
+    width: 100%;
+}
+
+.imagen {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.imagen:hover {
+    transform: scale(1.05);
+}
+
+footer a {
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+footer a:hover {
+    transform: translateX(3px);
+}
+
+footer .social {
+    transition: transform 0.3s ease;
+}
+
+footer a:hover .social {
+    transform: scale(1.2);
+}
