@@ -6,140 +6,200 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../HojaDeEstilo.css">
+    <style>
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .position-sticky {
+            top: 2rem;
+        }
+
+        .article-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .publicidad img, .publicidad video {
+            width: 100%;
+            margin-bottom: 20px;
+            max-height: 250px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container-fluid p-0">
+        <div class="container-fluid p-0"></div>
+            <div class="container-fluid p-0">
             <img src="../RecursosGenerales/Imagenes/Banner_Web.png" class="img-fluid w-100" alt="banner">
-        </div>
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+            </div>
+        
+            <nav class="navbar navbar-expand-lg navbar-dark bg-black">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav w-100 justify-content-between">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="../Portada/inicio-web.html" target="_self" title="EnlaceMenuHorizontal">Portada</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="../Tienda/tienda.html" target="_self" title="EnlaceMenuHorizontal">Tienda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="../CarruselExposicion/CarruselExposicion1.html" target="_self" title="EnlaceMenuHorizontal">Exposición de Vehículos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="../Blog/Blog.html" target="_self" title="EnlaceMenuHorizontal">Blog</a>
-                        </li>
-                    </ul>
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item"></li>
+                    <a class="nav-link text-white" href="../Portada/inicio-web.html" target="_self" title="EnlaceMenuHorizontal">Portada</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link text-white" href="../Tienda/tienda.html" target="_self" title="EnlaceMenuHorizontal">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link text-white" href="../CarruselExposicion/CarruselExposicion1.html" target="_self" title="EnlaceMenuHorizontal">Exposición de Vehículos</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link text-white" href="../Blog/Blog.html" target="_self" title="EnlaceMenuHorizontal">Blog</a>
+                    </li>
+                </ul>
                 </div>
             </div>
-        </nav>
+            </nav>
     </header>
-    
-    <div class="container mt-4">
-        <div class="row">
-            <main class="col-lg-8">
-                <h1 class="mb-4">Blog</h1>
-                
-                <article class="row mb-5 pb-3 border-bottom">
-                    <div class="col-md-8">
-                        <h2>Drift Spain</h2>
-                        <p>
-                            El <span class="fw-bold">Drift Spain</span> es un destacado campeonato de drifting en España que incluye múltiples competiciones a lo largo del año, tanto nacionales como internacionales. Este evento reúne a los mejores pilotos en categorías como <span class="fw-bold">SemiPro</span> y <span class="fw-bold"></span>, quienes compiten en circuitos emblemáticos del país, como el Circuito del Jarama, el de Cheste, y Miranda de Ebro.
-                        </p>
-                        <p>
-                            El campeonato tiene gran prestigio en la comunidad de drifting y es un referente en <span class="fw-bold">Europa</span>. Además de los eventos locales, también organiza desafíos internacionales como el <span class="fw-bold">European Drift Challenge</span>. Estos eventos son conocidos por su alta <span class="fw-bold">adrenalina</span>, <span class="fw-bold">maniobras técnicas</span> y <span class="fw-bold">batallas espectaculares</span>.
-                        </p>
-                        <p>
-                            Para más información, puedes visitar la página oficial de Drift Spain: <a href="https://driftspainseries.com" target="_blank">Drift Spain Series</a>.
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="Recursos/Imagenes/ImagenArticulo_1.png" alt="ImagenArticulo_1" class="article-img rounded">
-                    </div>
-                </article>
-                
-                <article class="row mb-5 pb-3 border-bottom">
-                    <div class="col-md-8">
-                        <h2>Uno de los coches deportivos más esperados entra finalmente en producción</h2>
-                        <p>
-                            El Glickenhaus SCG 004S es un superdeportivo de tres plazas, con diseño retro, fabricado por la <span class="fw-bold">Scuderia Cameron Glickenhaus (SCG)</span>, una marca boutique estadounidense. Destaca por su motor V8 sobrealimentado de <span class="fw-bold">6.2 litros</span> que produce <span class="fw-bold">650 caballos de fuerza</span>, acoplado a una transmisión manual de seis velocidades.
-                        </p>
-                        <p>
-                            Si estas interesado en más información consulta la página de <a href="https://www.topgear.es" target="_blank">Top Gear</a>.
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="Recursos/Imagenes/ImagenArticulo_2.png" alt="ImagenArticulo_2" class="article-img rounded">
-                    </div>
-                </article>
-                
-                <article class="row mb-5 pb-3 border-bottom">
-                    <div class="col-md-8">
-                        <h2>La IA de Voz Revoluciona la Experiencia de Conducción</h2>
-                        <p>
-                            La <span class="fw-bold">inteligencia artificial (IA)</span> basada en <span class="fw-bold">voz</span> está transformando el diseño y la funcionalidad de los <span class="fw-bold">automóviles modernos</span>. Este avance permite una interacción más <span class="fw-bold">natural</span> entre conductores y vehículos, mejorando la <span class="fw-bold">seguridad</span> y <span class="fw-bold">comodidad</span> al reducir distracciones. Los sistemas de <span class="fw-bold">IA</span> pueden realizar tareas como buscar <span class="fw-bold">rutas</span>, ajustar configuraciones del automóvil y responder <span class="fw-bold">preguntas en tiempo real</span>, todo mediante <span class="fw-bold">comandos de voz</span>.
-                        </p>
-                        <p>
-                            Además, estas tecnologías se están <span class="fw-bold">personalizando</span> para adaptarse a los hábitos individuales de los conductores, creando <span class="fw-bold">experiencias únicas</span>. Los fabricantes están integrando estas capacidades en <span class="fw-bold">ecosistemas digitales más amplios</span>, desde <span class="fw-bold">hogares inteligentes</span> hasta <span class="fw-bold">dispositivos móviles</span>, fomentando una <span class="fw-bold">conectividad fluida</span> entre plataformas.
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="Recursos/Imagenes/ImagenArticulo_3.png" alt="ImagenArticulo_3" class="article-img rounded">
-                    </div>
-                </article>
+    <br>
+    <main class="container">
 
-                <article class="row mb-5 pb-3 border-bottom">
-                    <div class="col-md-8">
-                        <h2>Los vehículos eléctricos representan uno de cada cuatro coches vendidos en noviembre, mientras la industria solicita más apoyo</h2>
-                        <p>
-                            Los vehículos eléctricos de batería (BEV) dominaron las ventas en noviembre, alcanzando un <span class="fw-bold">25% de las nuevas matriculaciones</span>, lo que supone un <span class="fw-bold">aumento del 60% en comparación con el año anterior</span>. Este crecimiento se produce mientras las ventas de automóviles en general cayeron un <span class="fw-bold">2</span>%, siendo la segunda contracción mensual consecutiva.
-                        </p>
-                        <p>
-                            Las ventas de gasolina y diésel continuaron disminuyendo, con caídas del <span class="fw-bold">18% y más del 10%</span> respectivamente, mientras que los híbridos también perdieron terreno. La industria atribuye la resistencia de los <span class="fw-bold">BEV</span> a descuentos insostenibles que han sumado <span class="fw-bold">£4,000 millones en el año.</span>
-                        </p>
-                        <p>
-                            Fabricantes y líderes del sector han intensificado su presión sobre el gobierno para obtener <span class="fw-bold">incentivos directos o recortes fiscales</span> que fomenten la compra de vehículos eléctricos por parte de particulares. Actualmente, el mercado depende principalmente de <span class="fw-bold">ventas a flotas beneficiadas por ventajas fiscales</span>, mientras que las <span class="fw-bold">ventas privadas</span>, que representan el <span class="fw-bold">40% del total</span>, han mostrado un desempeño débil.
-                        </p>
-                        <p>
-                            El gobierno británico está revisando sus <span class="fw-bold">objetivos de cero emisiones</span>, que exigen que el <span class="fw-bold">22% de las ventas de automóviles sean de cero emisiones en 2024</span> y aumenten progresivamente hasta la <span class="fw-bold">eliminación de motores de combustión en 2030</span>.
-                        </p>
-                        <p>
-                            A pesar de las preocupaciones de la industria, defensores como <span class="fw-bold">Ben Nelmes, de New Automotive</span>, destacan los avances logrados gracias a los objetivos ambiciosos y los incentivos fiscales, posicionando al <span class="fw-bold">Reino Unido como líder en el mercado europeo de vehículos eléctricos</span>.
-                        </p>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Eventos</strong>
+                        <h3 class="mb-0">Drift Spain</h3>
+                        <div class="mb-1 text-body-secondary">Abril 9, 2024</div>
+                        <p class="card-text mb-auto">El campeonato de drifting más importante de España con competiciones nacionales e internacionales.</p>
+                        <a href="#drift-spain" class="stretched-link">Continuar leyendo</a>
                     </div>
-                    <div class="col-md-4">
-                        <img src="Recursos/Imagenes/ImagenArticulo_4.png" alt="ImagenArticulo_4" class="article-img rounded">
-                    </div>
-                </article>
-                
-            </main>
-            
-            <aside class="col-lg-4">
-                <div class="bg-light p-3 rounded">
-                    <h2 class="h4 mb-3">Publicidad</h2>
-                    
-                    <div class="publicidad">
-                        <img src="../RecursosGenerales/Imagenes/Publicidad_4.png" alt="Anuncio Publicitario Nº1" class="rounded">
-                    </div>
-                    
-                    <div class="publicidad">
-                        <video src="../RecursosGenerales/Videos/Mercedes.mp4" controls loop autoplay preload="metadata" poster="../RecursosGenerales/Videos/Portada_Video_Mercedes.png" class="rounded"></video>
-                    </div>
-                    
-                    <div class="publicidad">
-                        <img src="../RecursosGenerales/Imagenes/Publicidad_1.png" alt="Anuncio Publicitario Nº2" class="rounded">
-                    </div>
-                    
-                    <div class="publicidad">
-                        <img src="../RecursosGenerales/Imagenes/Publicidad_2.png" alt="Anuncio Publicitario Nº2" class="rounded">
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="Recursos/Imagenes/ImagenArticulo_1.png" width="200" height="250" alt="Drift Spain">
                     </div>
                 </div>
-            </aside>
+            </div>
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success-emphasis">Proximo lanzamiento</strong>
+                        <h3 class="mb-0">Glickenhaus SCG 004S</h3>
+                        <div class="mb-1 text-body-secondary">Abril 8, 2024</div>
+                        <p class="card-text mb-auto">Uno de los coches deportivos más esperados entra finalmente en producción.</p>
+                        <a href="#glickenhaus" class="stretched-link">Continuar leyendo</a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="Recursos/Imagenes/ImagenArticulo_2.png" width="200" height="250" alt="Glickenhaus SCG 004S">
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <div class="row g-5">
+            <div class="col-md-8">
+                <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                    Últimas publicaciones
+                </h3>
+
+                <article class="blog-post" id="drift-spain">
+                    <h2 class="display-5 link-body-emphasis mb-1">Drift Spain</h2>
+                    <p class="blog-post-meta">Abril 9, 2025</p>
+
+                    <p>El <strong>Drift Spain</strong> es un destacado campeonato de drifting en España que incluye múltiples competiciones a lo largo del año, tanto nacionales como internacionales. Este evento reúne a los mejores pilotos en categorías como <strong>SemiPro</strong> y <strong>Pro</strong>, quienes compiten en circuitos emblemáticos del país, como el Circuito del Jarama, el de Cheste, y Miranda de Ebro.</p>
+                    <hr>
+                    <p>El campeonato tiene gran prestigio en la comunidad de drifting y es un referente en <strong>Europa</strong>. Además de los eventos locales, también organiza desafíos internacionales como el <strong>European Drift Challenge</strong>. Estos eventos son conocidos por su alta <strong>adrenalina</strong>, <strong>maniobras técnicas</strong> y <strong>batallas espectaculares</strong>.</p>
+                    <p>Para más información, puedes visitar la página oficial de Drift Spain: <a href="https://driftspainseries.com" target="_blank">Drift Spain Series</a>.</p>
+                    
+                    <img src="Recursos/Imagenes/ImagenArticulo_1.png" class="img-fluid rounded mb-3" alt="Drift Spain">
+                </article>
+
+                <article class="blog-post" id="glickenhaus">
+                    <h2 class="display-5 link-body-emphasis mb-1">Uno de los coches deportivos más esperados entra finalmente en producción</h2>
+                    <p class="blog-post-meta">Abril 7, 2025</p>
+
+                    <p>El Glickenhaus SCG 004S es un superdeportivo de tres plazas, con diseño retro, fabricado por la <strong>Scuderia Cameron Glickenhaus (SCG)</strong>, una marca boutique estadounidense. Destaca por su motor V8 sobrealimentado de <strong>6.2 litros</strong> que produce <strong>650 caballos de fuerza</strong>, acoplado a una transmisión manual de seis velocidades.</p>
+                    
+                    <img src="Recursos/Imagenes/ImagenArticulo_2.png" class="img-fluid rounded mb-3" alt="Glickenhaus SCG 004S">
+                    
+                    <p>Si estas interesado en más información consulta la página de <a href="https://www.topgear.es" target="_blank">Top Gear</a>.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="display-5 link-body-emphasis mb-1">La IA de Voz Revoluciona la Experiencia de Conducción</h2>
+                    <p class="blog-post-meta">Abril 2, 2025</p>
+
+                    <p>La <strong>inteligencia artificial (IA)</strong> basada en <strong>voz</strong> está transformando el diseño y la funcionalidad de los <strong>automóviles modernos</strong>. Este avance permite una interacción más <strong>natural</strong> entre conductores y vehículos, mejorando la <strong>seguridad</strong> y <strong>comodidad</strong> al reducir distracciones. Los sistemas de <strong>IA</strong> pueden realizar tareas como buscar <strong>rutas</strong>, ajustar configuraciones del automóvil y responder <strong>preguntas en tiempo real</strong>, todo mediante <strong>comandos de voz</strong>.</p>
+                    
+                    <img src="Recursos/Imagenes/ImagenArticulo_3.png" class="img-fluid rounded mb-3" alt="IA en automóviles">
+                    
+                    <p>Además, estas tecnologías se están <strong>personalizando</strong> para adaptarse a los hábitos individuales de los conductores, creando <strong>experiencias únicas</strong>. Los fabricantes están integrando estas capacidades en <strong>ecosistemas digitales más amplios</strong>, desde <strong>hogares inteligentes</strong> hasta <strong>dispositivos móviles</strong>, fomentando una <strong>conectividad fluida</strong> entre plataformas.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="display-5 link-body-emphasis mb-1">Los vehículos eléctricos representan uno de cada cuatro coches vendidos en noviembre</h2>
+                    <p class="blog-post-meta">Marzo 27, 2025</p>
+
+                    <p>Los vehículos eléctricos de batería (BEV) dominaron las ventas en noviembre, alcanzando un <strong>25% de las nuevas matriculaciones</strong>, lo que supone un <strong>aumento del 60% en comparación con el año anterior</strong>. Este crecimiento se produce mientras las ventas de automóviles en general cayeron un <strong>2%</strong>, siendo la segunda contracción mensual consecutiva.</p>
+                    
+                    <img src="Recursos/Imagenes/ImagenArticulo_4.jpg" class="img-fluid rounded mb-3" alt="Vehículos eléctricos">
+                    
+                    <p>Las ventas de gasolina y diésel continuaron disminuyendo, con caídas del <strong>18% y más del 10%</strong> respectivamente, mientras que los híbridos también perdieron terreno. La industria atribuye la resistencia de los <strong>BEV</strong> a descuentos insostenibles que han sumado <strong>£4,000 millones en el año.</strong></p>
+                    
+                    <p>Fabricantes y líderes del sector han intensificado su presión sobre el gobierno para obtener <strong>incentivos directos o recortes fiscales</strong> que fomenten la compra de vehículos eléctricos por parte de particulares. Actualmente, el mercado depende principalmente de <strong>ventas a flotas beneficiadas por ventajas fiscales</strong>, mientras que las <strong>ventas privadas</strong>, que representan el <strong>40% del total</strong>, han mostrado un desempeño débil.</p>
+                    
+                    <p>El gobierno británico está revisando sus <strong>objetivos de cero emisiones</strong>, que exigen que el <strong>22% de las ventas de automóviles sean de cero emisiones en 2024</strong> y aumenten progresivamente hasta la <strong>eliminación de motores de combustión en 2030</strong>.</p>
+                    
+                    <p>A pesar de las preocupaciones de la industria, defensores como <strong>Ben Nelmes, de New Automotive</strong>, destacan los avances logrados gracias a los objetivos ambiciosos y los incentivos fiscales, posicionando al <strong>Reino Unido como líder en el mercado europeo de vehículos eléctricos</strong>.</p>
+                </article>
+
+                <nav class="blog-pagination" aria-label="Pagination">
+                    <a class="btn btn-outline-primary rounded-pill" href="#">Más antiguas</a>
+                    <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Más recientes</a>
+                </nav>
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-body-tertiary rounded">
+                        <h4 class="fst-italic">Nuestro Blog</h4>
+                        <p class="mb-0">Aqui encontraras las últimas noticias sobre el mundo del motor, desde eventos competitivos hastas los últimos lanzamientos del mercado.</p>
+                    </div>
+
+                    <div class="p-4">
+                        <h4 class="fst-italic">Publicidad</h4>
+                        <div class="publicidad">
+                            <img src="../RecursosGenerales/Imagenes/Publicidad_4.png" alt="Anuncio Publicitario" class="rounded">
+                        </div>
+                        
+                        <div class="publicidad">
+                            <video src="../RecursosGenerales/Videos/Mercedes.mp4" controls loop autoplay preload="metadata" poster="../RecursosGenerales/Videos/Portada_Video_Mercedes.png" class="rounded"></video>
+                        </div>
+                        
+                        <div class="publicidad">
+                            <img src="../RecursosGenerales/Imagenes/Publicidad_1.png" alt="Anuncio Publicitario" class="rounded">
+                        </div>
+                        
+                        <div class="publicidad">
+                            <img src="../RecursosGenerales/Imagenes/Publicidad_2.png" alt="Anuncio Publicitario" class="rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer class="bg-black text-white py-4">
         <div class="container">
