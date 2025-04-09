@@ -35,13 +35,13 @@ footer {
     width: 100%;
 }
 
-.portada {
+.destacar {
     display: inline-block;
     transition: transform 0.3s ease;
     text-decoration: none;
 }
 
-.portada:hover {
+.destacar:hover {
     transform: scale(1.05);
 }
 
@@ -75,4 +75,21 @@ footer a:hover .social {
 .publicidad>img, .publicidad>video {
     width: 100%;
     margin-bottom: 20px;
+}
+
+.article-img {
+    width: 100%;
+    height: 250px;
+}
+
+.publicidad>img, .publicidad>video {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1400px) {
+    .carousel-item>img {
+        width: 100%;
+        height: 500px;
+    }
 }
