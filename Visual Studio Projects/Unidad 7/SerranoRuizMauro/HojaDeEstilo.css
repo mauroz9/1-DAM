@@ -35,12 +35,13 @@ footer {
     width: 100%;
 }
 
-.imagen {
+.portada {
     display: inline-block;
     transition: transform 0.3s ease;
+    text-decoration: none;
 }
 
-.imagen:hover {
+.portada:hover {
     transform: scale(1.05);
 }
 
@@ -60,4 +61,18 @@ footer .social {
 
 footer a:hover .social {
     transform: scale(1.2);
+}
+
+.article-img {
+    width: 100%;
+    height: 250px;
+}
+
+.position-sticky {
+    top: 10px;
+}
+
+.publicidad>img, .publicidad>video {
+    width: 100%;
+    margin-bottom: 20px;
 }
