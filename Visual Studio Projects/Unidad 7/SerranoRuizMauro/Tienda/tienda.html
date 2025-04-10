@@ -4,167 +4,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda</title>
-    <link rel="stylesheet" type="text/css" href="../HojaDeEstilos.css">
+    <title>Tuneo Total - Tienda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../HojaDeEstilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
     <header>
-        <div>
-            <img src="../RecursosGenerales/Imagenes/Banner_Web.png" alt="banner" />
+        <div class="container-fluid p-0">
+            <img src="../RecursosGenerales/Imagenes/Banner_Web.png" class="img-fluid w-100" alt="Banner Automotor Passion - Competición y tecnología automovilística">
         </div>
-        <nav>
-            <li><a href="../Portada/inicio-web.html" target="_self" title="EnlaceMenuHorizontal">Portada</a></li>
-            <li><a href="../Indice/indice.html" target="_self" title="EnlaceMenuHorizontal">Índice</a></li>
-            <li><a href="../Tienda/tienda.html" target="_self" title="EnlaceMenuHorizontal">Tienda</a></li>
-            <li><a href="../CarruselExposicion/CarruselExposicion1.html" target="_self" title="EnlaceMenuHorizontal">Exposición de Vehículos</a></li>
-            <li><a href="../Blog/Blog.html" target="_self" title="EnlaceMenuHorizontal">Blog</a></li>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../Portada/Portada.html" target="_self" title="Página principal de Tuneo Total">Portada</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../Tienda/Tienda.html" target="_self" title="Tienda oficial de Tuneo Total">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../CarruselExposicion/CarruselExposicion.html" target="_self" title="Exposición de vehículos de Tuneo Total">Exposición de Vehículos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../Blog/Blog.html" target="_self" title="Blog de Tuneo Total">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" title="Carrito de Tuneo Total"><i class="bi bi-cart"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <div id="contenidoGaleria">
-        <main>
-            <h1 class="titulo">Tienda</h1>
-            <div id="galeria">
-                <div>
-                    <img src="../Tienda/Recursos/Imagenes/Turbo.jpg" alt="Producto Turbo Stage 2" />
-                    <h3>KC Turbos Stage 2 - 1.790,00 €</h3>
-                    <p>
-                        Este es un <span class="negrita">gran turbo</span> para aquellos que buscan superar los límites de su vehiculo. Está hecho
-                        para aquellos que
-                        buscan <span class="negrita">más potencia</span> máxima pero aún quieren tener la capacidad de remolcar el peso máximo. Este
-                        turbo remolcará el peso máximo
-                        con facilidad siempre que controle sus temperaturas y mantenga <span class="negrita">altas sus revoluciones</span>. Este
-                        turbo tiene un <span class="negrita">silbido</span> muy similar
-                        al de los turbos <span class="negrita">Powermax/2003</span>.
-                    </p>
-                </div>
-                <div>
-                    <img src="../Tienda/Recursos/Imagenes/Stage_1.png" alt="Producoto Reprogramación Stage 1" />
-                    <h3>Reprogramación Stage 1 - 325,00 €</h3>
-                    <p>
-                        La reprogramación <span class="negrita">Stage 1</span> es un proceso de ajuste de la <span class="negrita">ECU</span> de su automóvil para mejorar su
-                        <span class="negrita">rendimiento</span> y <span class="negrita">potencia</span>. El proceso
-                        implica modificar la configuración del software de la ECU, lo que permite un mayor flujo de aire
-                        y combustible hacia el motor. Ofrecemos un <span class="negrita">chip</span> facil de instalar diseñado para cada modelo.
-                    </p>
-                </div>
-                <div>
-                    <img src="../Tienda/Recursos/Imagenes/Linea_Escape.jpg" alt="Producto Linea de Escape" />
-                    <h3>Linea de Escape - 664,00 €</h3>
-                    <p>
-                        Un tubo de escape de <span class="negrita">competición</span> es una parte <span class="negrita">importante</span> del sistema de escape de un vehículo de
-                        <span class="negrita">alto rendimiento</span> diseñado para <span class="negrita">carreras</span>. A diferencia de los tubos de escape convencionales, los tubos de escape de competición
-                        están diseñados para <span class="negrita">maximizar el flujo de gases</span> de escape y mejorar el rendimiento del motor.
-                    </p>
-                </div>
-
-                <div>
-                    <img src="../Tienda/Recursos/Imagenes/Kit_Carroceria.jpg" alt="Producto Kit de Carrocería" />
-                    <h3>Kit de Carrocería - 2.540,00 €</h3>
-                    <p>
-                        Diseñamos Kits de Carrocería <span class="negrita">homologados</span> para todo tipo de vehículos. Ofrecemos <span class="negrita">distintos
-                        diseños</span> según las especifícaciones y materiales
-                        buscados por el cliente. Con esta módificación tu coche pasara a verse como un <span class="negrita">Super-Deportivo</span>.
-                    </p>
-                </div>
-                <div>
-                    <img src="../Tienda/Recursos/Imagenes/Cielo_Estrellado.jpg" alt="Producto Cielo Estrellado" />
-                    <h3>Cielo Estrellado - 1399,00 €</h3>
-                    <p>
-                        Kit de instalación de Cielo Estrellado para <span class="negrita">cualquier modelo</span> de vehiculo. Esta módificación
-                        provee de <span class="negrita">lujo</span> al vehiculo en el que se instala,
-                        así como una estética mas moderna y de <span class="negrita">estilo futurista</span>.
-                    </p>
-                </div>
-                <div>
-                    <img src="../Tienda/Recursos/Imagenes/Volante_Deportivo.jpg"
-                        alt="Producto Volante Deportivo de Carbono" />
-                    <h3>Volante Deportivo de Carbono - 400,00 €</h3>
-                    <p>
-                        Volante universal de <span class="negrita">Fibra de Carbono REAL</span>. Ofrece un agarre deportivo y una estética moderna,
-                        apta para cualquier vehículo. Esta hecho a base de
-                        fibra de carbono, un material muy resistente, ligero y perfecto para el mundo del motor.
-                    </p>
-                </div>
-
-                <div>
-                    <img src="../Tienda/Recursos/Imagenes/Frenos.png" alt="Frenos de Competición" />
-                    <h3>Frenos de Competición - 3.831,65 €</h3>
-                    <p>
-                        Los sistemas de frenos <span class="negrita">Brembo UPGRADE</span> ofrecen numerosas soluciones, tanto desde el punto de vista
-                        técnico y de las prestaciones como desde el punto de vista estético, para satisfacer las
-                        necesidades de todos aquellos que desean cambiar su sistema de frenos y <span class="negrita">disfrutar</span> de
-                        prestaciones más <span class="negrita">deportivas</span> y mayor <span class="negrita">seguridad</span>, o simplemente darle un toque de estilo único y
-                        personal a su vehículo. 
-                    </p>
-                </div>
-                <div>
-                    <img src="../Tienda/Recursos/Imagenes/Suspension.png" alt="Kit de Suspensión" />
-                    <h3>Kit de Suspensión - 620,30 €</h3>
-                    <p>
-                        Son la opción idónea para <span class="negrita">conducir en calle</span> y su uso ocasional en circuitos y <span class="negrita">track days</span>. Estos
-                        kits permiten el <span class="negrita">ajuste de altura</span> individualmente del ajuste de dureza, cuenta con perillas de
-                        <span class="negrita">regulación de fácil</span> acceso para ajustar la compresión y el rebote, no puede ser más fácil
-                        ajustar la altura y dureza en la suspensión. Usted elige qué tan bajo o alto desea su vehículo,
-                        y las copelas de aluminio con ajuste de <span class="negrita">caídas</span> delanteras y traseras disponibles también le
-                        permiten obtener la <span class="negrita">configuración de alineación perfecta</span>.
-                    </p>
-                </div>
-                <div>
-                    <img src="../Tienda/Recursos/Imagenes/Embrague.png" alt="Embrague Cerámico" />
-                    <h3>Embrague Cerámico - 904,40 €</h3>
-                    <p>El embrague Stage 2 utiliza una placa de <span class="negrita">presión mejorada</span> combinada con un disco de fricción de
-                        cerámica en <span class="negrita">configuraciones amortiguadas</span>. La gama de <span class="negrita">embrague Stage 2</span> está diseñada para
-                        vehículos de carretera y de vía que requieren una mayor capacidad de par y tolerancia de
-                        temperatura, y un acoplamiento más rápido. No se recomienda para los vehículos <span class="negrita">conducidos
-                        diariamente</span>.</p>
+    <main class="container py-4">
+        <h1 class="h1 fw-bold text-center m-5">Tienda de Modificaciones</h1>
+        
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+     
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Tienda/Recursos/Imagenes/Turbo.jpg" class="card-img-top" alt="Turbo Stage 2">
+                    <div class="card-body">
+                        <h3 class="card-title h3 fw-bold">KC Turbos Stage 2 - 1.790,00 €</h3>
+                        <p class="card-text">
+                            Este es un <span class="negrita">gran turbo</span> para aquellos que buscan superar los límites de su vehiculo. Está hecho para aquellos que buscan <span class="negrita">más potencia</span> máxima pero aún quieren tener la capacidad
+                            de remolcar el peso máximo.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-primary w-100">Añadir al carrito</button>
+                    </div>
                 </div>
             </div>
-        </main>
-        <aside>
-            <h2>Publicidad</h2>
-            <div class="publicidad">
-                <img src="../RecursosGenerales/Imagenes/Publicidad_2.png" alt="Anuncio Publicitario Nº1">
+            
+        
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Tienda/Recursos/Imagenes/Stage_1.png" class="card-img-top" alt="Reprogramación Stage 1">
+                    <div class="card-body">
+                        <h3 class="card-title h3 fw-bold">Reprogramación Stage 1 - 325,00 €</h3>
+                        <p class="card-text">
+                            La reprogramación <span class="negrita">Stage 1</span> es un proceso de ajuste de la <span class="negrita">ECU</span> de su automóvil para mejorar su
+                            <span class="negrita">rendimiento</span> y <span class="negrita">potencia</span>.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-primary w-100">Añadir al carrito</button>
+                    </div>
+                </div>
             </div>
-            <div class="publicidad">
-                <video src="../RecursosGenerales/Videos/Mercedes.mp4" controls loop autoplay preload="metadata" poster="../RecursosGenerales/Videos/Portada_Video_Mercedes.png"></video>
+         
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Tienda/Recursos/Imagenes/Linea_Escape.jpg" class="card-img-top" alt="Línea de Escape">
+                    <div class="card-body">
+                        <h3 class="card-title h3 fw-bold">Linea de Escape - 664,00 €</h3>
+                        <p class="card-text">
+                            Un tubo de escape de <span class="negrita">competición</span> es una parte <span class="negrita">importante</span> del sistema de escape de un vehículo de
+                            <span class="negrita">alto rendimiento</span> diseñado para <span class="negrita">carreras</span>.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-primary w-100">Añadir al carrito</button>
+                    </div>
+                </div>
             </div>
-            <div class="publicidad">
-                <img src="../RecursosGenerales/Imagenes/Publicidad_1.png" alt="Anuncio Publicitario Nº2">
+            
+      
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Tienda/Recursos/Imagenes/Kit_Carroceria.jpg" class="card-img-top" alt="Kit de Carrocería">
+                    <div class="card-body">
+                        <h3 class="card-title h3 fw-bold">Kit de Carrocería - 2.540,00 €</h3>
+                        <p class="card-text">
+                            Diseñamos Kits de Carrocería <span class="negrita">homologados</span> para todo tipo de vehículos. Ofrecemos <span class="negrita">distintos
+                                diseños</span> según las especifícaciones buscadas por el cliente.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-primary w-100">Añadir al carrito</button>
+                    </div>
+                </div>
             </div>
-            <div class="publicidad">
-                <img src="../RecursosGenerales/Imagenes/Publicidad_4.png" alt="Anuncio Publicitario Nº2">
+            
+         
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Tienda/Recursos/Imagenes/Cielo_Estrellado.jpg" class="card-img-top" alt="Cielo Estrellado">
+                    <div class="card-body">
+                        <h3 class="card-title h3 fw-bold">Cielo Estrellado - 1.399,00 €</h3>
+                        <p class="card-text">
+                            Kit de instalación de Cielo Estrellado para <span class="negrita">cualquier modelo</span> de vehiculo. Esta módificación provee de <span class="negrita">lujo</span> al vehiculo.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-primary w-100">Añadir al carrito</button>
+                    </div>
+                </div>
             </div>
-        </aside>
-    </div>
-
-    <footer>
-        <div>
-            <h2>Sobre nosotros</h2>
-            <ul>
-                <li>Conócenos</li>
-                <li>Ayuda</li>
-                <li>Información esencial</li>
-            </ul>
+            
+         
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Tienda/Recursos/Imagenes/Volante_Deportivo.jpg" class="card-img-top" alt="Volante Deportivo">
+                    <div class="card-body">
+                        <h3 class="card-title h3 fw-bold">Volante Deportivo de Carbono - 400,00 €</h3>
+                        <p class="card-text">
+                            Volante universal de <span class="negrita">Fibra de Carbono REAL</span>. Ofrece un agarre deportivo y una estética moderna, apta para cualquier vehículo.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-primary w-100">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Tienda/Recursos/Imagenes/Frenos.png" class="card-img-top" alt="Frenos de Competición">
+                    <div class="card-body">
+                        <h3 class="card-title h3 fw-bold">Frenos de Competición - 3.831,65 €</h3>
+                        <p class="card-text">
+                            Los sistemas de frenos <span class="negrita">Brembo UPGRADE</span> ofrecen numerosas soluciones para quienes desean cambiar su sistema de frenos y <span class="negrita">disfrutar</span> de prestaciones más <span class="negrita">deportivas</span>.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-primary w-100">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Tienda/Recursos/Imagenes/Suspension.png" class="card-img-top" alt="Kit de Suspensión">
+                    <div class="card-body">
+                        <h3 class="card-title h3 fw-bold">Kit de Suspensión - 620,30 €</h3>
+                        <p class="card-text">
+                            Son la opción idónea para <span class="negrita">conducir en calle</span> y su uso ocasional en circuitos. Estos kits permiten el <span class="negrita">ajuste de altura</span> individualmente.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-primary w-100">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../Tienda/Recursos/Imagenes/Embrague.png" class="card-img-top" alt="Embrague Cerámico">
+                    <div class="card-body">
+                        <h3 class="card-title h3 fw-bold">Embrague Cerámico - 904,40 €</h3>
+                        <p class="card-text">
+                            El embrague Stage 2 utiliza una placa de <span class="negrita">presión mejorada</span> combinada con un disco de fricción de cerámica. Diseñado para vehículos que requieren mayor capacidad de par.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <button class="btn btn-primary w-100">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <h2>Legal</h2>
-            <ul>
-                <li>Aviso legal</li>
-                <li>Política de privacidad</li>
-                <li>Política de Cookies</li>
-                <li>Condiciones de uso</li>
-            </ul>
-        </div>
-        <div>
-            <h2>Redes sociales</h2>
-            <ul>
-                <li><img src="../RecursosGenerales/Imagenes/Icono_Facebook.png" alt="Facebook"> Facebook</li>
-                <li><img src="../RecursosGenerales/Imagenes/Icono_Instagram.png" alt="Instagram"> Instagram</li>
-                <li><img src="../RecursosGenerales/Imagenes/Icono_Twitter.png" alt="Twitter"> Twitter</li>
-                <li><img src="../RecursosGenerales/Imagenes/Icono_Tiktok.png" alt="Tiktok"> Tiktok</li>
-            </ul>
+    </main>
+
+
+
+
+    <footer class="bg-black text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 col-md-12">
+                    <h4 class="h4">Sobre nosotros</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/Portada/inicio-web.html" class="text-white text-decoration-none">Conócenos</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Nuestro equipo</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 mb-4 col-md-12">
+                    <h4 class="h4">Legal</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Aviso legal</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Política de privacidad</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Política de Cookies</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Condiciones de uso</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 mb-4 col-md-12">
+                    <h4 class="h4">Redes Sociales</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <img src="../RecursosGenerales/Imagenes/Icono_Facebook.png" alt="Síguenos en Facebook" class="me-2" width="20"> Facebook
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <img src="../RecursosGenerales/Imagenes/Icono_Instagram.png" alt="Síguenos en Instagram" class="me-2" width="20"> Instagram
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <img src="../RecursosGenerales/Imagenes/Icono_Twitter.png" alt="Síguenos en Twitter" class="me-2" width="20"> Twitter
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <img src="../RecursosGenerales/Imagenes/Icono_Tiktok.png" alt="Síguenos en TikTok" class="me-2" width="20"> TikTok
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
