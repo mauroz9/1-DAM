@@ -37,6 +37,12 @@
                             <a class="nav-link text-white" href="../Blog/Blog.html" target="_self" title="Blog de Tuneo Total">Blog</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-white" href="../InicioSesion/InicioSesion.html" target="_self" title="Inicio de sesion">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../InscribirseEvento/InscribirseEvento.html" target="_self" title="Inscripción a los eventos Tuneo Total">Inscribirse</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-white" href="#" title="Carrito de Tuneo Total"><i class="bi bi-cart"></i></a>
                         </li>
                     </ul>
@@ -48,42 +54,42 @@
     <main class="container h-100">
         <div class="row justify-content-center align-items-center m-5">
             <div class="col-md-10 col-lg-6 ">
-                <div class="card">
+                <div class="card bg-dark text-white">
                     <div class="card-body p-4">
                         <div class="text-center mb-4">
                             <h2 class="h2 fw-bold">Iniciar Sesión</h2>
                         </div>
-                        
+
                         <form id="logForm" action="" method="">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Correo Electrónico</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">
-                                        <i class="bi bi-envelope"></i>
+                                <div class="input-group ">
+                                    <span class="input-group-text bg-dark border-dark">
+                                        <i class="bi bi-envelope text-white"></i>
                                     </span>
-                                    <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+                                    <input type="email" class="form-control bg-secondary text-white border-dark" id="email" name="email" placeholder="tu@email.com" required>
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña</label>
+                                <label for="contrasena" class="form-label">Contraseña</label>
                                 <div class="input-group">
-                                    <span class="input-group-text">
-                                        <i class="bi bi-lock"></i>
+                                    <span class="input-group-text bg-dark border-dark">
+                                        <i class="bi bi-lock text-white"></i>
                                     </span>
-                                    <input type="password" class="form-control" id="password" required>
+                                    <input type="password" class="form-control bg-secondary text-white border-dark" name="contrasena" id="contrasena" required>
                                 </div>
                             </div>
-                            
+
                             <div class="mb-3 form-check">
-                                <input type="checkbox" name="recordar" id="recordar" value="true">
-                                <label class="form-check-label" for="remember">Recordar sesión</label>
+                                <input class="form-check-input bg-secondary border-dark" type="checkbox" name="recordar" id="recordar" value="true">
+                                <label class="form-check-label" for="recordar">Recordar sesión</label>
                             </div>
-                            
-                            <button type="submit" class="w-100 py-2 mb-3 rojo rounded" data-bs-toggle="modal" data-bs-target="#iniciosesion">
+
+                            <button type="submit" class="w-100 py-2 mb-3 rojo rounded destacar text-white" data-bs-toggle="modal" data-bs-target="#iniciosesion">
                                 Iniciar Sesión
                             </button>
-                            
+
                             <div class="text-center">
                                 <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
                             </div>
@@ -96,22 +102,22 @@
 
     <div class="modal fade" id="iniciosesion">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Error al iniciar sesion</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h4 class="modal-title">Error al iniciar sesion</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Vaya... parece que el servidor no responde. Por favor, inténtalo más tarde o contacta con el soporte técnico.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
             </div>
-            <div class="modal-body">
-              Vaya... parece que el servidor no responde. Por favor, inténtalo más tarde o contacta con el soporte técnico.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-      
-          </div>
         </div>
     </div>
-      
+
 
     <footer class="bg-black text-white py-4">
         <div class="container">
