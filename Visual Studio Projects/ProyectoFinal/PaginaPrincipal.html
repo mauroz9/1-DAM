@@ -9,43 +9,40 @@
     <link rel="stylesheet" type="text/css" href="../HojaDeEstilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        /* Hover animación suave */
         .nav-link {
-          transition: transform 0.2s, background-color 0.2s, color 0.2s, border-bottom 0.2s;
+          position: relative;
+          transition: all 0.3s ease;
         }
     
         .nav-link:hover {
-          transform: scale(1.08);
           font-weight: bold;
-          color: #000000;
           border-bottom: red 2px solid;
         }
     
-        /* Mostrar dropdown al pasar por encima */
         .dropdown:hover .dropdown-menu {
           display: block;
-          margin-top: 0; /* quitar salto */
+          margin-top: 0;
         }
       </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-ligth py-2">
+        <nav class="navbar navbar-expand-lg navbar-light bg-ligth py-2 px-5">
             <div class="container-fluid">
-              <!-- Logo -->
-              <a class="navbar-brand me-4" href="#">
-                <img src="/Recursos/LogoTablaRota.png" alt="Tabla Rota" width="40" height="40" class="d-inline-block align-text-top">
+
+              <a class="navbar-brand me-4" href="../ProyectoFinal/PaginaPrincipal.html">
+                <img src="../ProyectoFinal/Recursos/LogoTablaRota.png" alt="Tabla Rota" width="100" height="100" class="d-inline-block align-text-top">
               </a>
           
-              <!-- Toggle para móviles -->
+
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCentered">
                 <span class="navbar-toggler-icon"></span>
               </button>
           
-              <!-- Menú centrado -->
-              <div class="collapse navbar-collapse justify-content-center" id="navbarCentered">
+
+              <div class="collapse navbar-collapse mx-auto" id="navbarCentered">
                 <ul class="navbar-nav">
-          
+                  
                   <li class="nav-item">
                     <a class="nav-link px-3" href="#">Marcas</a>
                   </li>
@@ -54,7 +51,7 @@
                     <a class="nav-link dropdown-toggle px-3" href="#" id="dropdownSkateboards" role="button">Skateboards</a>
                     <div class="dropdown-menu dropdown-menu-light p-3 mt-1 border-white" aria-labelledby="dropdownSkateboards" style="min-width: 400px;">
                       <div class="row">
-                        <!-- Componentes -->
+
                         <div class="col-6">
                           <h6 class="dropdown-header">Componentes</h6>
                           <a class="dropdown-item" href="#">Tablas</a>
@@ -64,7 +61,7 @@
                           <a class="dropdown-item" href="#">Tornillos</a>
                           <a class="dropdown-item" href="#">Lijas</a>
                         </div>
-                        <!-- Completos -->
+
                         <div class="col-6">
                           <h6 class="dropdown-header">Completos</h6>
                           <a class="dropdown-item" href="#">Skateboards completos</a>
@@ -82,7 +79,88 @@
                 </ul>
               </div>
             </div>
+            <div class="container-fluid d-flex justify-content-end">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar">
+                <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+              </form>
+              <a class="nav-link m-2" href="../ProyectoFinal/Carrito.html" title="Carrito de compras"><i class="bi bi-cart"></i></a>
+            </div>
           </nav>
     </header>
+
+    <main>
+
+
+
+
+    </main>
+    <footer class="mt-5 border-top">
+
+      <div class="container py-3 justify-content-center d-flex">
+        <div class="row text-center">
+          <div class="col-6 col-md-auto mb-2">
+            <i class="bi bi-truck fs-5"></i> <span class="ms-1 fw-semibold">Envío</span>
+          </div>
+          <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+            <i class="bi bi-arrow-counterclockwise fs-5"></i> <span class="ms-1 fw-semibold">Devolución</span>
+          </div>
+          <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+            <i class="bi bi-arrow-left-right fs-5"></i> <span class="ms-1 fw-semibold">Intercambio</span>
+          </div>
+          <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+            <i class="bi bi-rulers fs-5"></i> <span class="ms-1 fw-semibold">Tabla de tallas</span>
+          </div>
+          <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+            <i class="bi bi-question-circle fs-5"></i> <span class="ms-1 fw-semibold">FAQ - Preguntas frecuentes</span>
+          </div>
+          <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+            <i class="bi bi-headset fs-5"></i> <span class="ms-1 fw-semibold">Atención al cliente</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="border-top">
+        <div class="container py-4">
+          <div class="row">
+
+            <div class="col-md-4 mb-3">
+              <h6 class="text-uppercase fw-bold border-bottom pb-2">Aviso legal</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#" class="text-decoration-none text-dark">Aviso legal</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Política de privacidad</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Condiciones generales</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Cookies</a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <h6 class="text-uppercase fw-bold border-bottom pb-2">Ayuda y servicio</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#" class="text-decoration-none text-dark">Envío</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Devolución & desistimiento</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Información sobre el desistimiento</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Tabla conversión de tallas</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Todas las reseñas</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">FAQ - Preguntas frecuentes</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Instrucciones sobre pilas</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Contacto</a></li>
+              </ul>
+            </div>
+    
+            <div class="col-md-4 mb-3 text-center">
+              <h6 class="text-uppercase fw-bold border-bottom pb-2">Síguenos</h6>
+              <div class="d-flex justify-content-center gap-3 mt-2">
+                <a href="#" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-dark fs-5"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-dark fs-5"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="text-dark fs-5"><i class="bi bi-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
 </body>
 </html>
