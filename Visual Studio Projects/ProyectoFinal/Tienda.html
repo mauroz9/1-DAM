@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Tabla Rota Skate Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../HojaDeEstilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .nav-link {
+          position: relative;
+          transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+          font-weight: bold;
+          border-bottom: red 2px solid;
+        }
+        .dropdown:hover .dropdown-menu {
+          display: block;
+          margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-ligth py-2 px-5">
+            <div class="container-fluid">
+
+                <a class="navbar-brand me-4" href="/PaginaPrincipal.html">
+                    <img src="../ProyectoFinal/Recursos/LogoTablaRota.png" alt="Tabla Rota" width="100" height="100" class="d-inline-block align-text-top">
+                </a>
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCentered">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse mx-auto" id="navbarCentered">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">Marcas</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" id="dropdownSkateboards" role="button">Skateboards</a>
+                            <div class="dropdown-menu dropdown-menu-light p-3 mt-1 border-white" aria-labelledby="dropdownSkateboards" style="min-width: 400px;">
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <h6 class="dropdown-header">Componentes</h6>
+                                        <a class="dropdown-item" href="#">Tablas</a>
+                                        <a class="dropdown-item" href="#">Ejes</a>
+                                        <a class="dropdown-item" href="#">Ruedas</a>
+                                        <a class="dropdown-item" href="#">Rodamientos</a>
+                                        <a class="dropdown-item" href="#">Tornillos</a>
+                                        <a class="dropdown-item" href="#">Lijas</a>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <h6 class="dropdown-header">Completos</h6>
+                                        <a class="dropdown-item" href="#">Skateboards completos</a>
+                                        <a class="dropdown-item" href="#">Cruiser</a>
+                                        <a class="dropdown-item" href="#">Longboards</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#">% SALE</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="container-fluid d-flex justify-content-end">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar">
+                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+                <a class="nav-link m-2" href="../ProyectoFinal/Carrito.html" title="Carrito de compras"><i class="bi bi-cart"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <h2 class="fw-bold border-bottom pb-2">TABLA ROTA - SKATESHOP</h2>
+                        <p class="text-muted">EL MEJOR MATERIAL</p>
+                        <p>¿Estás buscando un nuevo skate o necesitas una nueva tabla o ruedas? En Tabla Rota Skate Shop encontrarás todo lo que necesitas para patinar. Tanto si eres principiante como pro, tenemos las mejores marcas y mucha información para
+                            ayudarte en el camino.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="../ProyectoFinal/Recursos/ImagenTienda.jpg" class="img-fluid rounded" alt="Tienda de skate">
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-center mt-5 gap-4">
+
+                <div class="text-center m-2">
+                    <button class="btn btn-outline-dark rounded-circle p-4 border-2">
+
+                    </button>
+                    <small class="d-block mt-2">Tablas</small>
+                </div>
+
+                <div class="text-center m-2">
+                    <button class="btn btn-outline-dark rounded-circle p-4 border-2">
+
+                    </button>
+                    <small class="d-block mt-2">Ejes</small>
+                </div>
+
+                <div class="text-center m-2">
+                    <button class="btn btn-outline-dark rounded-circle p-4 border-2">
+
+                    </button>
+                    <small class="d-block mt-2">Ruedas</small>
+                </div>
+
+                <div class="text-center m-2">
+                    <button class="btn btn-outline-dark rounded-circle p-4 border-2">
+
+                    </button>
+                    <small class="d-block mt-2">Rodamientos</small>
+                </div>
+
+                <div class="text-center m-2">
+                    <button class="btn btn-outline-dark rounded-circle p-4 border-2">
+
+                    </button>
+                    <small class="d-block mt-2">Tornillos</small>
+                </div>
+
+                <div class="text-center m-2">
+                    <button class="btn btn-outline-dark rounded-circle p-4 border-2">
+
+                    </button>
+                    <small class="d-block mt-2">Lija</small>
+                </div>
+
+                <div class="text-center m-2">
+                    <button class="btn btn-outline-dark rounded-circle p-4 border-2">
+
+                    </button>
+                    <small class="d-block mt-2">Completos</small>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="fw-bold">x RESULTADOS</h1>
+                <div>
+                    <select class="form-select" aria-label="Filtrar productos">
+                        <option selected>Filtrar</option>
+                        <option value="1">Precio: Menor a mayor</option>
+                        <option value="2">Precio: Mayor a menor</option>
+                        <option value="3">Nombre: A-Z</option>
+                        <option value="4">Nombre: Z-A</option>
+                        <option value="5">Más recientes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="../ProyectoFinal/Recursos/Producto1.jpg" class="card-img-top" alt="Producto 1">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Tabla Skate Element</h5>
+                            <p class="card-text">Tabla profesional 8.25'' ideal para street y parque.</p>
+                            <div class="mt-auto d-flex justify-content-between">
+                                <button class="btn btn-outline-dark btn-sm">
+                                    <i class="bi bi-pencil"></i> Modificar
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="bi bi-x"></i> Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="../ProyectoFinal/Recursos/Producto2.jpg" class="card-img-top" alt="Producto 2">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Ruedas Spitfire 54mm</h5>
+                            <p class="card-text">Set de 4 ruedas Spitfire Formula Four para máxima velocidad y control.</p>
+                            <div class="mt-auto d-flex justify-content-between">
+                                <button class="btn btn-outline-dark btn-sm">
+                                    <i class="bi bi-pencil"></i> Modificar
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="bi bi-x"></i> Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="../ProyectoFinal/Recursos/Producto3.jpg" class="card-img-top" alt="Producto 3">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Rodamientos Bones Reds</h5>
+                            <p class="card-text">Rodamientos de alta precisión y resistencia para todo tipo de skateboarding.</p>
+                            <div class="mt-auto d-flex justify-content-between">
+                                <button class="btn btn-outline-dark btn-sm">
+                                    <i class="bi bi-pencil"></i> Modificar
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="bi bi-x"></i> Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-dark btn-lg">
+                    <i class="bi bi-plus-lg"></i> Añadir nuevo producto
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-5 border-top">
+
+        <div class="container py-3 justify-content-center d-flex">
+            <div class="row text-center">
+                <div class="col-6 col-md-auto mb-2">
+                    <i class="bi bi-truck fs-5"></i> <span class="ms-1 fw-semibold">Envío</span>
+                </div>
+                <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+                    <i class="bi bi-arrow-counterclockwise fs-5"></i> <span class="ms-1 fw-semibold">Devolución</span>
+                </div>
+                <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+                    <i class="bi bi-arrow-left-right fs-5"></i> <span class="ms-1 fw-semibold">Intercambio</span>
+                </div>
+                <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+                    <i class="bi bi-rulers fs-5"></i> <span class="ms-1 fw-semibold">Tabla de tallas</span>
+                </div>
+                <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+                    <i class="bi bi-question-circle fs-5"></i> <span class="ms-1 fw-semibold">FAQ - Preguntas frecuentes</span>
+                </div>
+                <div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
+                    <i class="bi bi-headset fs-5"></i> <span class="ms-1 fw-semibold">Atención al cliente</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-top">
+            <div class="container py-4">
+                <div class="row">
+
+                    <div class="col-md-4 mb-3">
+                        <h6 class="text-uppercase fw-bold border-bottom pb-2">Aviso legal</h6>
+                        <ul class="list-unstyled small">
+                            <li><a href="#" class="text-decoration-none text-dark">Aviso legal</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Política de privacidad</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Condiciones generales</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Cookies</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <h6 class="text-uppercase fw-bold border-bottom pb-2">Ayuda y servicio</h6>
+                        <ul class="list-unstyled small">
+                            <li><a href="#" class="text-decoration-none text-dark">Envío</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Devolución & desistimiento</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Información sobre el desistimiento</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Tabla conversión de tallas</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Todas las reseñas</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">FAQ - Preguntas frecuentes</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Instrucciones sobre pilas</a></li>
+                            <li><a href="#" class="text-decoration-none text-dark">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 mb-3 text-center">
+                        <h6 class="text-uppercase fw-bold border-bottom pb-2">Síguenos</h6>
+                        <div class="d-flex justify-content-center gap-3 mt-2">
+                            <a href="#" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-dark fs-5"><i class="bi bi-tiktok"></i></a>
+                            <a href="#" class="text-dark fs-5"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
