@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleag.org">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Hola Mundo</title> 
+		
+		<link rel="stylesheet" href="@{/css/HojaDeEstilo.css}">
+		
+	</head>
+	
+	<body>
+		
+		<p><span th:text="${lista.get(0)}"></span></p>
+		<p><span th:text="${lista.get(1)}"></span></p>
+		<p><span th:text="${lista.get(2)}"></span></p>
+		<p><span th:text="${lista.get(3)}"></span></p>
+		
+	</body>
+
+</html>
