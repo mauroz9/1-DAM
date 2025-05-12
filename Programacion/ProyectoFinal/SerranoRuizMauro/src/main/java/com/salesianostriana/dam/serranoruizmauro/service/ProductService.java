@@ -12,6 +12,8 @@ import com.salesianostriana.dam.serranoruizmauro.repository.ProductRepository;
 @Service
 public class ProductService{
 	
+	//CREAR Y USAR UN BASE SERVICE
+	
 	@Autowired
 	private ProductRepository productRepo;
 	
@@ -31,7 +33,4 @@ public class ProductService{
 		productRepo.deleteById(id);
 	}
 	
-
-	
-	//Todos los metodos
 }

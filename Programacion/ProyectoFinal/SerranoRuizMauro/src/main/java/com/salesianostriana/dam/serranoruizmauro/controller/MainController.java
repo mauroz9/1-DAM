@@ -60,6 +60,8 @@ public class MainController {
 	@GetMapping({ "/shop", "/shop/{id}" })
 	public String filterCategory(Model model, @PathVariable(required = false) Long id) {
 		List<Product> products;
+
+		//Añadir la comprobacion con optional si no encuentra el producto
 		
 		if (id != null) {
 			products = productService.findAll().stream().filter(Product::isVisible)
@@ -69,6 +71,8 @@ public class MainController {
 			products = productService.findAll().stream().filter(Product::isVisible).collect(Collectors.toList());
 			model.addAttribute("selectedCategoryId", null);
 		}
+		
+		//Añadir la comprobacion con optional si no encuentra el producto
 		
 		model.addAttribute("products", products);
 		model.addAttribute("categories", categoryService.findAll());

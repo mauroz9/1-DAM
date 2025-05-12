@@ -20,5 +20,4 @@ public class CategoryService {
 		return categoryRepo.findAll();
 	}
 	
-	//metodos
 }
