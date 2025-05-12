@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.serranoruizmauro.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
@@ -20,10 +22,12 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private double price;
-	private String name, description, image, brand;
+	private String name, description, image;
 	private int stock;
 	private boolean visible;
+	private LocalDateTime creationDate;
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name = "fk_product_category"))
@@ -37,5 +41,19 @@ public class Product {
 	public void removeFromCategory(Category category) {
 		category.getProductsList().remove(this);
 		this.category = null;		
+	}
+	
+	@ManyToOne
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_product_brand"))
+	private Brand brand;
+	
+	public void addToBrand(Brand brand) {
+		this.brand = brand;
+		brand.getProductsList().add(this);	
+	}
+	
+	public void removerFromBrand(Brand brand) {
+		category.getProductsList().remove(this);
+		this.brand = brand;
 	}
 }

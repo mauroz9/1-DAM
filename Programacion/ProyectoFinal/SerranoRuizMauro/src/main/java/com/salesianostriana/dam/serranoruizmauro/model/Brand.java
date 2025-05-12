@@ -16,19 +16,17 @@ import lombok.ToString;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Category {
-	
+@NoArgsConstructor
+public class Brand {
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-	private String categoryName;
+	private String brandName, logo;
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "brand", fetch = FetchType.EAGER)
 	private List<Product> productsList = new ArrayList <>();
-	
 }

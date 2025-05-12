@@ -42,7 +42,8 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-8">
 				<div class="d-flex justify-content-between align-items-center mb-4">
-					<h1 class="fw-bold">Modificar Producto</h1>
+					<h1 th:if="${product.id != null}" class="fw-bold">Modificar Producto</h1>
+					<h1 th:if="${product.id == null}" class="fw-bold">Crear Producto</h1>
 					<a href="/shop" class="btn btn-outline-secondary">
 						<i class="bi bi-arrow-left"></i> Volver a la tienda
 					</a>
@@ -80,8 +81,11 @@
 
 								<div class="mb-3">
 									<label for="productBrand" class="form-label fw-bold">Marca</label>
-									<input type="text" th:field="*{brand}" class="form-control" id="productBrand"
+									<select th:field="*{brand}" class="form-select form-control" id="productBrand"
 										required>
+										<option th:each="brand : ${brands}" th:value="${brand.id}"
+											th:text="${brand.brandName}"></option>
+									</select>
 								</div>
 
 								<div class="mb-3">
@@ -111,9 +115,10 @@
 						</div>
 
 						<div class="d-flex justify-content-end gap-3">
-							<button type="button" class="btn btn-outline-danger">
+							<a th:if="${product.id != null}" th:href="@{'/delete/' + ${product.id}}"
+								class="btn btn-outline-danger">
 								<i class="bi bi-trash"></i> Eliminar Producto
-							</button>
+							</a>
 							<button type="submit" class="btn btn-dark">
 								<i class="bi bi-check-lg"></i> Guardar Cambios
 							</button>
