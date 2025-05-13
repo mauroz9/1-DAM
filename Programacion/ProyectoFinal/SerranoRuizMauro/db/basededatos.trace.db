@@ -478,3 +478,180 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Mauro/D
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 54 more
+2025-05-13 16:57:38.835522+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+ALTER TABLE PRODUCTS
+DROP COLUMN BRAND [42102-232]
+2025-05-13 17:07:53.450886+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Tabla de skate de alta resistencia fabricada en madera de arce, modelo Tabla de Skate Element.' WHERE id = 1 [42102-232]
+2025-05-13 17:07:53.451886+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Tabla robusta de skate con diseño clásico perfecta para skaters experimentados, modelo Tabla Santa Cruz Screaming Hand.' WHERE id = 2 [42102-232]
+2025-05-13 17:07:53.451886+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Ejes de skate fuertes y duraderos ideales para cualquier tipo de tabla, modelo Ejes Independents 139.' WHERE id = 3 [42102-232]
+2025-05-13 17:07:53.452886+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Ejes de skate de alta precisión ideales para maniobras rápidas, modelo Ejes Thunder 147.' WHERE id = 4 [42102-232]
+2025-05-13 17:07:53.452886+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Ruedas de skate de alta calidad perfectas para todo tipo de terreno, modelo Ruedas Bones STF.' WHERE id = 5 [42102-232]
+2025-05-13 17:07:53.452886+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Ruedas de skate para una conducción suave y rápida, modelo Ruedas OJ Longboard.' WHERE id = 6 [42102-232]
+2025-05-13 17:07:53.453887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Ruedas duraderas que proporcionan una excelente tracción en cualquier superficie, modelo Ruedas Spitfire 80HD.' WHERE id = 7 [42102-232]
+2025-05-13 17:07:53.453887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Rodamientos cerámicos de alta velocidad y durabilidad, modelo Rodamientos Antix.' WHERE id = 8 [42102-232]
+2025-05-13 17:07:53.454887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Rodamientos rápidos y duraderos ideales para street y vert, modelo Rodamientos Bones Reds.' WHERE id = 9 [42102-232]
+2025-05-13 17:07:53.454887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Rodamientos de skate rápidos y precisos, modelo Rodamientos ACE.' WHERE id = 10 [42102-232]
+2025-05-13 17:07:53.454887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Juego de tornillos para montar tus ruedas y ejes con facilidad, modelo Tornillos WKND.' WHERE id = 11 [42102-232]
+2025-05-13 17:07:53.455887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Juego de tornillos de alta calidad y resistencia, modelo Tornillos ENJOI.' WHERE id = 12 [42102-232]
+2025-05-13 17:07:53.455887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Tornillos resistentes para mantener tu setup seguro, modelo Tornillos Independent.' WHERE id = 13 [42102-232]
+2025-05-13 17:07:53.455887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Lija antideslizante para un mejor agarre, modelo Lija Grizzly.' WHERE id = 14 [42102-232]
+2025-05-13 17:07:53.456887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Lija de skate muy duradera, modelo Lija Jessup.' WHERE id = 15 [42102-232]
+2025-05-13 17:07:53.456887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Lija de alta calidad que te dará el máximo agarre, modelo Lija Mob Grip.' WHERE id = 16 [42102-232]
+2025-05-13 17:07:53.456887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Skateboard completo con ejes y ruedas incluidos, modelo Skateboard Completo Santa Cruz.' WHERE id = 17 [42102-232]
+2025-05-13 17:07:53.457887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Completo profesional diseñado para rampa, modelo Skateboard Completo Anti Hero.' WHERE id = 18 [42102-232]
+2025-05-13 17:07:53.457887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Skateboard completo de alto rendimiento, modelo Skateboard Completo Plan B.' WHERE id = 19 [42102-232]
+2025-05-13 17:07:53.457887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Cruiser compacto de alta calidad, modelo Cruiser YOW.' WHERE id = 20 [42102-232]
+2025-05-13 17:07:53.457887+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Cruiser para paseos largos de gran suavidad, modelo Cruiser Landyachtz.' WHERE id = 21 [42102-232]
+2025-05-13 17:07:53.458888+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Cruiser clásico con ruedas grandes, modelo Cruiser Santa Cruz.' WHERE id = 22 [42102-232]
+2025-05-13 17:07:53.458888+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Longboard de alta gama perfecto para downhill y cruising, modelo Longboard Landyachtz Drop Cat.' WHERE id = 23 [42102-232]
+2025-05-13 17:07:53.458888+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Longboard ideal para downhill con alta estabilidad y control, modelo Longboard YOW.' WHERE id = 24 [42102-232]
+2025-05-13 17:07:53.459888+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "PRODUCTS" no encontrada
+Table "PRODUCTS" not found; SQL statement:
+UPDATE PRODUCTS SET creation_date = '2025-05-13 14:59:49', alt_text = 'Skateboard completo ideal para principiantes, modelo Skate Completo ENJOI Panda.' WHERE id = 25 [42102-232]
+2025-05-13 17:22:38.735462+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Santa Cruz' WHERE id = 2 [42102-232]
+2025-05-13 17:22:38.740463+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Independent' WHERE id = 3 [42102-232]
+2025-05-13 17:22:38.740463+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Thunder' WHERE id = 4 [42102-232]
+2025-05-13 17:22:38.740463+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Bones' WHERE id = 5 [42102-232]
+2025-05-13 17:22:38.741471+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca OJ Wheels' WHERE id = 6 [42102-232]
+2025-05-13 17:22:38.741471+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Spitfire' WHERE id = 7 [42102-232]
+2025-05-13 17:22:38.742466+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Antix' WHERE id = 8 [42102-232]
+2025-05-13 17:22:38.742466+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca ACE' WHERE id = 9 [42102-232]
+2025-05-13 17:22:38.742466+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca WKND' WHERE id = 10 [42102-232]
+2025-05-13 17:22:38.743466+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca ENJOI' WHERE id = 11 [42102-232]
+2025-05-13 17:22:38.743466+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Independent' WHERE id = 12 [42102-232]
+2025-05-13 17:22:38.744465+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Grizzly' WHERE id = 13 [42102-232]
+2025-05-13 17:22:38.744465+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Jessup' WHERE id = 14 [42102-232]
+2025-05-13 17:22:38.745466+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Mob Grip' WHERE id = 15 [42102-232]
+2025-05-13 17:22:38.745466+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Anti Hero' WHERE id = 16 [42102-232]
+2025-05-13 17:22:38.745466+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Plan B' WHERE id = 17 [42102-232]
+2025-05-13 17:22:38.746467+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca YOW' WHERE id = 18 [42102-232]
+2025-05-13 17:22:38.746467+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "BRANDS" no encontrada
+Table "BRANDS" not found; SQL statement:
+UPDATE BRANDS SET alt_text = 'Logo marca Landyachtz' WHERE id = 19 [42102-232]

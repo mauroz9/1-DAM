@@ -40,32 +40,22 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-8">
 				<div class="d-flex justify-content-between align-items-center mb-4">
-					<h1 th:text="${brand.id != null ? 'Modificar Marca' : 'Crear Marca'}" class="fw-bold"></h1>
-					<a href="/brands" class="btn btn-outline-secondary">
+					<h1 th:text="${category.id != null ? 'Modificar Categoría' : 'Crear Categoría'}" class="fw-bold"></h1>
+					<a href="/categories" class="btn btn-outline-secondary">
 						<i class="bi bi-arrow-left"></i> Volver al listado de marcas
 					</a>
 				</div>
 
-				<form class="form-section mb-5" th:action="@{/saveBrand}" th:object="${brand}" method="post">
+				<form class="form-section mb-5" th:action="@{/saveCategory}" th:object="${category}" method="post">
 					<input type="hidden" th:field="*{id}" />
 
 					<div class="mb-3">
-						<label for="brandName" class="form-label fw-bold">Nombre de la Marca</label>
-						<input type="text" th:field="*{brandName}" class="form-control" id="brandName" required>
-					</div>
-
-					<div class="mb-3">
-						<label for="brandLogo" class="form-label fw-bold">Logo</label>
-						<input type="url" th:field="*{logo}" class="form-control" id="brandLogo">
-					</div>
-
-					<div class="mb-3">
-						<label for="brandAltText" class="form-label fw-bold">Texto Alternativo</label>
-						<input type="text" th:field="*{altText}" class="form-control" id="brandAltText">
+						<label for="categoryName" class="form-label fw-bold">Nombre de la Categoría</label>
+						<input type="text" th:field="*{categoryName}" class="form-control" id="categoryName" required>
 					</div>
 
 					<div class="d-flex justify-content-end gap-3">
-						<a th:if="${brand.id != null}" th:href="@{'/deleteBrand/' + ${brand.id}}"
+						<a th:if="${category.id != null}" th:href="@{'/deleteCategory/' + ${category.id}}"
 							class="btn btn-outline-danger">
 							<i class="bi bi-trash"></i> Eliminar Marca
 						</a>

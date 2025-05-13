@@ -42,7 +42,9 @@
 								</div>
 							</div>
 							<div class="col-7 d-flex align-items-center">
-								<img th:src="${brand.logo}" class="card-img" alt="Imagen del producto">
+								<img th:src="${#strings.isEmpty(brand.logo) ? 'https://www.shutterstock.com/image-vector/image-icon-trendy-flat-style-600nw-643080895.jpg' : brand.logo}"
+									th:alt="${#strings.isEmpty(brand.altText) ? 'Logo por defecto' : brand.altText}"
+									class="card-img"/>
 							</div>
 						</div>
 						<div class="d-flex justify-content-between mt-3">

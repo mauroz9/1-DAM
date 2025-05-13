@@ -42,8 +42,7 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-8">
 				<div class="d-flex justify-content-between align-items-center mb-4">
-					<h1 th:if="${product.id != null}" class="fw-bold">Modificar Producto</h1>
-					<h1 th:if="${product.id == null}" class="fw-bold">Crear Producto</h1>
+					<h1 th:text="${product.id != null ? 'Modificar Producto' : 'Crear Producto'}" class="fw-bold"></h1>
 					<a href="/shop" class="btn btn-outline-secondary">
 						<i class="bi bi-arrow-left"></i> Volver a la tienda
 					</a>
@@ -53,10 +52,10 @@
 					<form class="form-section mb-5" th:action="@{/saveProduct}" th:object="${product}" method="post">
 						<div class="row mb-4">
 							<div class="col-md-12">
-								<div class="mb-3">
-									<input type="hidden" th:field="*{id}" class="form-control" id="productName">
-								</div>
 
+								<input type="hidden" th:field="*{id}" class="form-control" id="productId">
+								<input type="hidden" th:field="*{creationDate}" class="form-control"
+									id="productCreationDate">
 
 								<div class="mb-3">
 									<label for="productName" class="form-label fw-bold">Nombre del Producto</label>
@@ -98,20 +97,25 @@
 									<label for="productImage" class="form-label fw-bold">Imagen del Producto</label>
 									<input class="form-control" th:field="*{image}" type="url" id="productImage">
 								</div>
+
+								<div class="mb-3">
+									<label for="productAltText" class="form-label fw-bold">Texto Alternativo</label>
+									<input type="text" th:field="*{altText}" class="form-control" id="productAltText">
+								</div>
+
+								<div class="mb-3">
+									<label for="productDescription" class="form-label fw-bold">Descripción</label>
+									<textarea class="form-control" th:field="*{description}" id="productDescription"
+										rows="4"></textarea>
+								</div>
+
+								<div class="form-check form-switch mb-4">
+									<input class="form-check-input" th:field="*{visible}" type="checkbox"
+										id="productActive" checked>
+									<label class="form-check-label" for="productActive">Producto activo (visible en la
+										tienda)</label>
+								</div>
 							</div>
-						</div>
-
-						<div class="mb-4">
-							<label for="productDescription" class="form-label fw-bold">Descripción</label>
-							<textarea class="form-control" th:field="*{description}" id="productDescription"
-								rows="4"></textarea>
-						</div>
-
-						<div class="form-check form-switch mb-4">
-							<input class="form-check-input" th:field="*{visible}" type="checkbox" id="productActive"
-								checked>
-							<label class="form-check-label" for="productActive">Producto activo (visible en la
-								tienda)</label>
 						</div>
 
 						<div class="d-flex justify-content-end gap-3">

@@ -24,7 +24,7 @@ public class Brand {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String brandName, logo;
+	private String brandName, logo, altText;
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude

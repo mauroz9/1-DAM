@@ -24,7 +24,7 @@ public class Product {
 	private Long id;
 	
 	private double price;
-	private String name, description, image;
+	private String name, description, image, altText;
 	private int stock;
 	private boolean visible;
 	private LocalDateTime creationDate;
