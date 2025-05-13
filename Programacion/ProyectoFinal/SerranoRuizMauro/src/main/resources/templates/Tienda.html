@@ -2,6 +2,7 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+	<!--meter el name y description con meta-->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tienda - Tabla Rota Skate Shop</title>
@@ -108,7 +109,7 @@
 								<a th:href="@{'/modifyProduct/' + ${product.id}}" class="btn btn-outline-dark btn-sm">
 									<i class="bi bi-pencil"></i> Modificar
 								</a>
-								<a th:href="@{'/delete/' + ${product.id}}" class="btn btn-outline-danger btn-sm">
+								<a th:href="@{'/deleteProduct/' + ${product.id}}" class="btn btn-outline-danger btn-sm">
 									<i class="bi bi-x"></i> Eliminar
 								</a>
 							</div>

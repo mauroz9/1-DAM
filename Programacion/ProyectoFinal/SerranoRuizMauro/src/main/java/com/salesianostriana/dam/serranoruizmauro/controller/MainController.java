@@ -29,17 +29,17 @@ public class MainController {
 	@Autowired
 	BrandService brandService;
 
-	//Página principal
+	// Página principal
 	@GetMapping("/tablarota")
 	public String mainWeb() {
 		return "PaginaPrincipal";
 	}
 
-	//Marcas
+	// Marcas
 	@GetMapping("/brands")
 	public String showAllBrands(Model model) {
 		List<Brand> brands = brandService.findAll();
-		
+
 		model.addAttribute("brands", brands);
 		model.addAttribute("resultCount", brands.size());
 		return "Marcas";
@@ -57,31 +57,46 @@ public class MainController {
 
 		return "Marcas";
 	}
-	
+
+	@GetMapping("/createBrand")
+	public String createBrandForm(Model model) {
+		model.addAttribute("brand", new Brand());
+		return "FormularioMarca";
+	}
+
 	@GetMapping("/modifyBrand/{id}")
 	public String modifyFormBrand(Model model, @PathVariable Long id) {
-		
-		Optional <Brand> brandOpt = Optional.ofNullable(brandService.findById(id));
-		
-		if(brandOpt.isPresent()) {
+
+		Optional<Brand> brandOpt = Optional.ofNullable(brandService.findById(id));
+
+		if (brandOpt.isPresent()) {
 			model.addAttribute("brand", brandOpt.get());
 			return "FormularioMarca";
-		}else {
+		} else {
 			return "redirect:/brands";
 		}
 	}
-	
+
 	@PostMapping("/saveBrand")
 	public String saveBrand(Brand brand) {
 		brandService.save(brand);
-		
+
 		return "redirect:/brands";
 	}
 
-	//Tienda
-	@GetMapping({ "/shop", "/shop/{id}" })
+	@GetMapping("/deleteBrand/{id}")
+	public String deleteBrand(@PathVariable Long id) {
+		Optional<Brand> brandOpt = Optional.ofNullable(brandService.findById(id));
+
+		brandOpt.ifPresent(p -> brandService.deleteById(id));
+
+		return "redirect:/brands";
+	}
+
+	// Tienda
+	@GetMapping({ "/shop", "/shop/{id}", "/shop/search"})
 	public String filterCategory(Model model, @PathVariable(required = false) Long id,
-			@RequestParam(name = "sort", required = false) Integer sort) {
+			@RequestParam(name = "sort", required = false) Integer sort, @RequestParam(name = "search", required = false) String search) {
 		List<Product> products;
 
 		// Añadir la comprobacion con optional si no encuentra el producto
@@ -122,15 +137,22 @@ public class MainController {
 			}
 		}
 
+		if (search != null) {
+			products = productService.findAll().stream()
+					.filter(p -> p.getName().toLowerCase().contains(search.toLowerCase())).filter(Product::isVisible)
+					.collect(Collectors.toList());
+		}
+
 		model.addAttribute("products", products);
 		model.addAttribute("categories", categoryService.findAll());
 		model.addAttribute("resultCount", products.size());
 		model.addAttribute("sort", sort);
+		model.addAttribute("search", search);
 		return "Tienda";
 	}
 
 	@GetMapping("/createProduct")
-	public String createFormProduct(Model model) {
+	public String createProductForm(Model model) {
 		model.addAttribute("categories", categoryService.findAll());
 		model.addAttribute("brands", brandService.findAll());
 		model.addAttribute("product", new Product());
@@ -147,7 +169,7 @@ public class MainController {
 		return "redirect:/shop";
 	}
 
-	@GetMapping("/delete/{id}")
+	@GetMapping("/deleteProduct/{id}")
 	public String deleteProduct(@PathVariable Long id) {
 		Optional<Product> productOpt = Optional.ofNullable(productService.findById(id));
 
@@ -172,18 +194,18 @@ public class MainController {
 		}
 	}
 
-	@GetMapping("/shop/search")
-	public String searchProduct(@RequestParam("search") String search, Model model) {
-		List<Product> results = productService.findAll().stream()
-				.filter(p -> p.getName().toLowerCase().contains(search.toLowerCase())).filter(Product::isVisible)
-				.collect(Collectors.toList());
-
-		model.addAttribute("products", results);
-		model.addAttribute("categories", categoryService.findAll());
-		model.addAttribute("resultCount", results.size());
-		model.addAttribute("search", search);
-
-		return "Tienda";
-	}
+//	@GetMapping("/shop/search")
+//	public String searchProduct(@RequestParam("search") String search, Model model) {
+//		List<Product> results = productService.findAll().stream()
+//				.filter(p -> p.getName().toLowerCase().contains(search.toLowerCase())).filter(Product::isVisible)
+//				.collect(Collectors.toList());
+//
+//		model.addAttribute("products", results);
+//		model.addAttribute("categories", categoryService.findAll());
+//		model.addAttribute("resultCount", results.size());
+//		model.addAttribute("search", search);
+//
+//		return "Tienda";
+//	}
 
 }

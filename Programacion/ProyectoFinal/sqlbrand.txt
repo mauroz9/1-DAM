@@ -1,0 +1,19 @@
+1	Element	https://cdn.skatedeluxe.com/images/manufacturers/200px/element.jpg
+2	Santa Cruz	https://cdn.shopify.com/s/files/1/0741/4828/2660/files/santa-cruz-logo-black-and-white_480x480.jpg?v=1713239503
+3	Independent	https://images.seeklogo.com/logo-png/7/2/independent-logo-png_seeklogo-71192.png
+4	Thunder	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4NJ8URw7WPNz6a2Ec7TfihwBmWL0xt_YjIQ&s
+5	Bones	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR0Nz0Y-3gV3GPCDM3vgLxIv9_KEY_9mbPoQ&s
+6	OJ Wheels	https://www.longboarderlabs.com/wp-content/uploads/2020/06/oj-wheels-circle-logo-yellow-500x500.jpg
+7	Spitfire	https://seeklogo.com/images/S/spitfire-logo-47A9F7811D-seeklogo.com.png
+8	Antix	https://cdn.skatedeluxe.com/images/manufacturers/200px/antix.jpg
+9	ACE	https://neverenoughskate.shop/wp-content/uploads/2020/12/brand_ace_trucks.png
+10	WKND	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqTxZ11OD1WeaaOeA1Asbnl4itYN1Coha5Sg&s
+11	ENJOI	https://images.seeklogo.com/logo-png/17/1/enjoi-logo-png_seeklogo-179171.png
+12	Independent	https://cdn.skatedeluxe.com/images/manufacturers/200px/independent.jpg
+13	Grizzly	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYMUquf9wZjLKT0CLdvveT143mRSvPe1zAzw&s
+14	Jessup	https://cdn11.bigcommerce.com/s-ae3w3/images/stencil/1280x1280/products/101966/204358/jessup-sticker-2__18597.1702477891.jpg?c=2
+15	Mob Grip	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDmnEsRgQFzsP0lNz2Yx2JvjVwtHCMyyS6RKwbPoXFi-laIV9DIX-H55AKaE1g2kjx2U8&usqp=CAU
+16	Anti Hero	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREtqJzFmOfCDvb0LZH4gRnyoHXjl1gV8oVZA&s
+17	Plan B	https://cdn11.bigcommerce.com/s-brinfq1ux4/images/stencil/1280x1280/products/131710/265905/plan_b_-_logo_%2526_name_logo__79079.1326397592.380.380__38176.1741630700.jpg?c=2
+18	YOW	https://pleasuresmilano.com/wp-content/uploads/2023/05/yow-surf-cruiser-_clipped_rev_1-300x300.jpeg
+19	Landyachtz	https://www.steezdistribution.com/wp-content/uploads/2013/10/LY.png
