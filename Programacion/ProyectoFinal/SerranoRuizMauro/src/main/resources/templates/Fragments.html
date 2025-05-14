@@ -4,24 +4,9 @@
 <head>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../HojaDeEstilo.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/HojaDeEstilo.css}">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-	<style>
-		.nav-link {
-			position: relative;
-			transition: all 0.3s ease;
-		}
-
-		.nav-link:hover {
-			font-weight: bold;
-			border-bottom: red 2px solid;
-		}
-
-		.dropdown:hover .dropdown-menu {
-			display: block;
-			margin-top: 0;
-		}
-	</style>
+	
 </head>
 
 <body>
@@ -51,7 +36,7 @@
 							<a class="nav-link dropdown-toggle px-3" href="/shop" id="dropdownSkateboards"
 								role="button">Skateboards</a>
 							<div class="dropdown-menu dropdown-menu-light p-3 mt-1 border-white"
-								aria-labelledby="dropdownSkateboards" style="min-width: 500px;">
+								aria-labelledby="dropdownSkateboards">
 								<div class="row">
 									<div class="col-12">
 										<h6 class="dropdown-header">Categorias</h6>
@@ -70,9 +55,6 @@
 
 					</ul>
 				</div>
-			</div>
-			<div class="container-fluid d-flex justify-content-end">
-				<a class="nav-link m-2" href="#" title="Carrito de compras"><i class="bi bi-cart"></i></a>
 			</div>
 		</nav>
 	</header>

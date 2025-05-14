@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.salesianostriana.dam.serranoruizmauro.model.Brand;
 import com.salesianostriana.dam.serranoruizmauro.service.BrandService;
+import com.salesianostriana.dam.serranoruizmauro.service.CategoryService;
 
 @Controller
 public class BrandController {
 	
 	@Autowired
 	private BrandService brandService;
-
+	@Autowired
+	private CategoryService categoryService;
 	
 	@GetMapping("/brands")
 	public String showAllBrands(Model model) {
@@ -25,6 +27,8 @@ public class BrandController {
 
 		model.addAttribute("brands", brands);
 		model.addAttribute("resultCount", brands.size());
+		model.addAttribute("categories", categoryService.findAll());
+		
 		return "Marcas";
 	}
 
@@ -37,6 +41,7 @@ public class BrandController {
 		model.addAttribute("brands", results);
 		model.addAttribute("resultCount", results.size());
 		model.addAttribute("search", search);
+		model.addAttribute("categories", categoryService.findAll());
 
 		return "Marcas";
 	}
