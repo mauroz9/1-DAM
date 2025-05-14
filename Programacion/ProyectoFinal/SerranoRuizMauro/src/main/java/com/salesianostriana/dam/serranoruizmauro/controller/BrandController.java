@@ -2,7 +2,6 @@ package com.salesianostriana.dam.serranoruizmauro.controller;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.salesianostriana.dam.serranoruizmauro.model.Brand;
 import com.salesianostriana.dam.serranoruizmauro.service.BrandService;
 import com.salesianostriana.dam.serranoruizmauro.service.CategoryService;
+import com.salesianostriana.dam.serranoruizmauro.service.ProductService;
 
 @Controller
 public class BrandController {
@@ -20,6 +20,8 @@ public class BrandController {
 	private BrandService brandService;
 	@Autowired
 	private CategoryService categoryService;
+	@Autowired
+	private ProductService productService;
 	
 	@GetMapping("/brands")
 	public String showAllBrands(Model model) {
@@ -34,9 +36,7 @@ public class BrandController {
 
 	@GetMapping("/brands/search")
 	public String brandSearch(String search, Model model) {
-		List<Brand> results = brandService.findAll().stream()
-				.filter(b -> b.getBrandName().toLowerCase().contains(search.toLowerCase()))
-				.collect(Collectors.toList());
+		List<Brand> results = brandService.searchByName(search);
 
 		model.addAttribute("brands", results);
 		model.addAttribute("resultCount", results.size());
@@ -82,7 +82,10 @@ public class BrandController {
 	public String deleteBrand(@PathVariable Long id) {
 		Optional<Brand> brandOpt = brandService.findById(id);
 
-		brandOpt.ifPresent(b -> brandService.deleteById(id));
+		brandOpt.ifPresent(b -> {
+			productService.unlinkBrand(id);
+			brandService.deleteById(id);
+		});
 
 		return "redirect:/brands";
 	}

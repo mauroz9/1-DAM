@@ -18,42 +18,50 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private double price;
+
+	private double price, discount;
 	private String name, description, image, altText;
 	private int stock;
 	private boolean visible;
 	private LocalDateTime creationDate;
-	
+
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name = "fk_product_category"))
 	private Category category;
-	
+
 	public void addToCategory(Category category) {
 		this.category = category;
 		category.getProductsList().add(this);
 	}
-	
+
 	public void removeFromCategory(Category category) {
 		category.getProductsList().remove(this);
-		this.category = null;		
+		this.category = null;
 	}
-	
+
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name = "fk_product_brand"))
 	private Brand brand;
-	
+
 	public void addToBrand(Brand brand) {
 		this.brand = brand;
-		brand.getProductsList().add(this);	
+		brand.getProductsList().add(this);
 	}
-	
+
 	public void removerFromBrand(Brand brand) {
 		category.getProductsList().remove(this);
 		this.brand = brand;
 	}
+
+	public double getDiscountedPrice() {
+		if (discount > 0) {
+			return price - (price * discount / 100.0);
+		}
+		return price;
+	}
+
 }

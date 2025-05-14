@@ -40,7 +40,7 @@
 
 			<div class="row justify-content-center mt-5 g-2" th:if="${categories}">
 				<div class="col-auto col-md-3 col-lg-1 text-center" th:each="category : ${categories}">
-					<a th:if="${selectedCategoryId != category.id}" th:href="@{'/shop/' + ${category.id}}">
+					<a th:if="${selectedCategoryId != category.id}" th:href="@{'/sale-products/' + ${category.id}}">
 						<button class="btn btn-outline-dark rounded-circle p-4 border-2">
 
 						</button>
@@ -61,7 +61,7 @@
 				<h1 class="fw-bold" th:text="${resultCount} + ' RESULTADOS'"></h1>
 				<div class="row mb-4">
 					<div class="col-8">
-						<form class="form-section d-flex" th:action="@{/shop/search}" method="get">
+						<form class="form-section d-flex" th:action="@{/sale-products/search}" method="get">
 							<input class="form-control me-2" type="search" name="search" placeholder="Buscar">
 							<button class="btn btn-outline" type="submit"><i class="bi bi-search"></i></button>
 						</form>

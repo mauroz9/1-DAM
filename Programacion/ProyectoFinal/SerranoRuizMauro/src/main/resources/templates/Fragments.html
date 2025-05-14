@@ -6,7 +6,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/HojaDeEstilo.css}">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-	
+
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-ligth py-2 px-5">
 			<div class="container-fluid">
 
-				<a class="navbar-brand me-4" href="/tablarota">
+				<a class="navbar-brand me-4" href="/">
 					<img th:src="@{../images/LogoTablaRota.png}" alt="Tabla Rota" width="100" height="100"
 						class="d-inline-block align-text-top">
 				</a>
@@ -31,6 +31,10 @@
 						<li class="nav-item">
 							<a class="nav-link px-3" href="/brands">Marcas</a>
 						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link px-3" href="/categories">Categorias</a>
+						</li>
 
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle px-3" href="/shop" id="dropdownSkateboards"
@@ -41,7 +45,8 @@
 									<div class="col-12">
 										<h6 class="dropdown-header">Categorias</h6>
 										<a th:each="category : ${categories}" class="dropdown-item"
-											th:href="@{/shop/{id}(id=${category.id})}" th:text="${category.categoryName}">
+											th:href="@{/shop/{id}(id=${category.id})}"
+											th:text="${category.categoryName}">
 											Nombre Categoría
 										</a>
 									</div>
@@ -50,7 +55,7 @@
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link px-3" href="/categories">Categorias</a>
+							<a class="nav-link px-3" href="/sale-products">% Sale</a>
 						</li>
 
 					</ul>
@@ -64,30 +69,30 @@
 		<div class="container py-3 justify-content-center d-flex">
 			<div class="row text-center">
 				<div class="col-6 col-md-auto mb-2">
-					<a href="/EnvioDevolucion.html" class="text-decoration-none text-dark"><i
+					<a href="/shipping-return" class="text-decoration-none text-dark"><i
 							class="bi bi-truck fs-5"></i> <span class="ms-1 fw-semibold">Envío</span></a>
 				</div>
 				<div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
-					<a href="/EnvioDevolucion.html" class="text-decoration-none text-dark"><i
+					<a href="/shipping-return" class="text-decoration-none text-dark"><i
 							class="bi bi-arrow-counterclockwise fs-5"></i> <span
 							class="ms-1 fw-semibold">Devolución</span></a>
 				</div>
 				<div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
-					<a href="/EnvioDevolucion.html" class="text-decoration-none text-dark"><i
+					<a href="/shipping-return" class="text-decoration-none text-dark"><i
 							class="bi bi-arrow-left-right fs-5"></i> <span
 							class="ms-1 fw-semibold">Intercambio</span></a>
 				</div>
 				<div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
-					<a href="/PreguntasFrecuentes.html" class="text-decoration-none text-dark"><i
+					<a href="/faq" class="text-decoration-none text-dark"><i
 							class="bi bi-question-circle fs-5"></i> <span class="ms-1 fw-semibold">FAQ - Preguntas
 							frecuentes</span></a>
 				</div>
 				<div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
-					<a href="/Contacto.html" class="text-decoration-none text-dark"><i class="bi bi-headset fs-5"></i>
+					<a href="/customer-service" class="text-decoration-none text-dark"><i class="bi bi-headset fs-5"></i>
 						<span class="ms-1 fw-semibold">Atención al cliente</span></a>
 				</div>
 				<div class="col-6 col-md-auto mb-2 border-start border-dark-subtle ps-3">
-					<a href="/Contacto.html" class="text-decoration-none text-dark"><i class="bi bi-globe"></i>
+					<a href="#sociale" class="text-decoration-none text-dark"><i class="bi bi-globe"></i>
 						<span class="ms-1 fw-semibold">Redes</span></a>
 				</div>
 			</div>
@@ -100,32 +105,32 @@
 					<div class="col-md-4 mb-3">
 						<h6 class="text-uppercase fw-bold border-bottom pb-2">Aviso legal</h6>
 						<ul class="list-unstyled small">
-							<li><a href="/PoliticaPrivacidad.html" class="text-decoration-none text-dark">Política de
+							<li><a href="/privacy-policy" class="text-decoration-none text-dark">Política de
 									privacidad</a>
 							</li>
-							<li><a href="/TerminosCondiciones.html" class="text-decoration-none text-dark">Términos y
+							<li><a href="/terms-conditions" class="text-decoration-none text-dark">Términos y
 									Condiciones</a>
 							</li>
-							<li><a href="/Cookies.html" class="text-decoration-none text-dark">Cookies</a></li>
+							<li><a href="/cookies" class="text-decoration-none text-dark">Cookies</a></li>
 						</ul>
 					</div>
 
 					<div class="col-md-4 mb-3">
 						<h6 class="text-uppercase fw-bold border-bottom pb-2">Ayuda y servicio</h6>
 						<ul class="list-unstyled small">
-							<li><a href="/EnvioDevolucion.html" class="text-decoration-none text-dark">Envío &
+							<li><a href="/shipping-return" class="text-decoration-none text-dark">Envío &
 									Devolución</a>
 							</li>
-							<li><a href="/PreguntasFrecuentes.html" class="text-decoration-none text-dark">FAQ -
+							<li><a href="/faq" class="text-decoration-none text-dark">FAQ -
 									Preguntas
 									frecuentes</a>
 							</li>
-							<li><a href="/Contacto.html" class="text-decoration-none text-dark">Contacto</a></li>
+							<li><a href="/customer-service" class="text-decoration-none text-dark">Contacto</a></li>
 						</ul>
 					</div>
 
 					<div class="col-md-4 mb-3 text-center">
-						<h6 class="text-uppercase fw-bold border-bottom pb-2">Síguenos</h6>
+						<h6 class="text-uppercase fw-bold border-bottom pb-2" id="social">Síguenos</h6>
 						<div class="d-flex justify-content-center gap-3 mt-2">
 							<a href="instagram.com" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
 							<a href="tiktok.com" class="text-dark fs-5"><i class="bi bi-tiktok"></i></a>

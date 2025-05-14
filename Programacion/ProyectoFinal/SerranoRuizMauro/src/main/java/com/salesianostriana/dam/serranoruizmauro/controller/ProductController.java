@@ -1,9 +1,7 @@
 package com.salesianostriana.dam.serranoruizmauro.controller;
 
 import java.time.LocalDateTime;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -23,50 +21,51 @@ import com.salesianostriana.dam.serranoruizmauro.service.ProductService;
 
 @Controller
 public class ProductController {
-	
+
 	@Autowired
 	private ProductService productService;
+
 	@Autowired
 	private CategoryService categoryService;
+
 	@Autowired
 	private BrandService brandService;
-	
+
 	@GetMapping({ "/shop", "/shop/{id}", "/shop/search" })
-	public String filterCategory(Model model, @PathVariable(required = false) Long id,
+	public String showProducts(Model model,
+			@PathVariable(required = false) Long id,
 			@RequestParam(name = "sort", required = false) Integer sort,
 			@RequestParam(name = "search", required = false) String search) {
 
-		Stream<Product> productStream = productService.findAll().stream().filter(Product::isVisible);
-		List<Product> products;
-		
-		Map<Integer, Comparator<Product>> sortOptions = Map.of(0, Comparator.comparing(Product::getPrice), 1,
-				Comparator.comparing(Product::getPrice).reversed(), 2, Comparator.comparing(Product::getName), 3,
-				Comparator.comparing(Product::getName).reversed(), 4,
-				Comparator.comparing(Product::getCreationDate).reversed());
-
-		if (id != null) {
-			productStream = productStream.filter(p -> p.getCategory().getId().equals(id));
-			model.addAttribute("selectedCategoryId", id);
-		} else {
-			model.addAttribute("selectedCategoryId", id);
-		}
-
-		if (search != null) {
-			productStream = productStream.filter(p -> p.getName().toLowerCase().contains(search.toLowerCase()));
-		}
-		
-		products = productStream.collect(Collectors.toList());
-		
-		if (sort != null) {
-			products.sort(sortOptions.get(sort));
-	    }
+		List<Product> products = productService.getFilteredAndSortedProducts(id, search, sort);
 
 		model.addAttribute("products", products);
 		model.addAttribute("categories", categoryService.findAll());
 		model.addAttribute("resultCount", products.size());
 		model.addAttribute("sort", sort);
 		model.addAttribute("search", search);
+		model.addAttribute("selectedCategoryId", id);
+
 		return "Tienda";
+	}
+
+	@GetMapping({ "/sale-products", "/sale-products/{id}", "/sale-products/search" })
+	public String showDiscountProducts(Model model,
+			@PathVariable(required = false) Long id,
+			@RequestParam(name = "sort", required = false) Integer sort,
+			@RequestParam(name = "search", required = false) String search) {
+
+		Stream<Product> productStream = productService.getFilteredAndSortedProducts(id, search, sort).stream().filter(p -> p.getDiscount()>0);
+		List <Product> products = productStream.collect(Collectors.toList());
+		
+		model.addAttribute("products", products);
+		model.addAttribute("categories", categoryService.findAll());
+		model.addAttribute("resultCount", products.size());
+		model.addAttribute("sort", sort);
+		model.addAttribute("search", search);
+		model.addAttribute("selectedCategoryId", id);
+
+		return "TiendaSale";
 	}
 
 	@GetMapping("/createProduct")
@@ -90,22 +89,18 @@ public class ProductController {
 	@GetMapping("/deleteProduct/{id}")
 	public String deleteProduct(@PathVariable Long id) {
 		Optional<Product> productOpt = productService.findById(id);
-
 		productOpt.ifPresent(p -> productService.deleteById(id));
-
 		return "redirect:/shop";
 	}
 
 	@GetMapping("/modifyProduct/{id}")
 	public String modifyForm(Model model, @PathVariable Long id) {
-
 		Optional<Product> productOpt = productService.findById(id);
 
 		if (productOpt.isPresent()) {
 			model.addAttribute("categories", categoryService.findAll());
 			model.addAttribute("brands", brandService.findAll());
 			model.addAttribute("product", productOpt.get());
-
 			return "FormularioProducto";
 		} else {
 			return "redirect:/shop";

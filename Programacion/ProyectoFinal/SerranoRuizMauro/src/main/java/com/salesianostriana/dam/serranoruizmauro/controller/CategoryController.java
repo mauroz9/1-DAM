@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.salesianostriana.dam.serranoruizmauro.model.Category;
 import com.salesianostriana.dam.serranoruizmauro.service.CategoryService;
+import com.salesianostriana.dam.serranoruizmauro.service.ProductService;
 
 @Controller
 public class CategoryController {
 	
 	@Autowired
 	private CategoryService categoryService;
+	
+	@Autowired
+	private ProductService productService;
 
 	
 	@GetMapping("/categories")
@@ -63,7 +67,10 @@ public class CategoryController {
 	public String deleteCategory(@PathVariable Long id) {
 		Optional<Category> categoryOpt = categoryService.findById(id);
 
-		categoryOpt.ifPresent(c -> categoryService.deleteById(id));
+		categoryOpt.ifPresent(c -> {
+			productService.unlinkCategory(id);
+			categoryService.deleteById(id);
+		});
 
 		return "redirect:/categories";
 	}

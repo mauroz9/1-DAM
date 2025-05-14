@@ -30,14 +30,14 @@
 			border-color: #000;
 		}
 
-		.btn-enviar {
+		.btn-send {
 			background-color: #1aaf9c;
 			color: white;
 			font-weight: bold;
 			width: 100%;
 		}
 
-		.btn-enviar:hover {
+		.btn-send:hover {
 			background-color: #159b8a;
 		}
 	</style>
@@ -61,9 +61,11 @@
 							<p class="mt-5 text-center border-top">Contestamos en un plazo máximo de 24 horas.</p>
 							<p class="mt-4 mb-2 text-center fw-bold">También puedes consultar nuestro apartado de
 								preguntas frecuentes:</p>
-							<button class="btn btn-outline-dark mb-5 d-flex mx-auto">
-								<i class="bi bi-question-circle ms-2 mx-2"></i>Preguntas Frecuentes
-							</button>
+							<div class="text-center mt-4">
+								<a href="/faq" class="btn btn-outline-dark btn-lg">
+									<i class="bi bi-question-circle ms-2 mx-2"></i>FAQ - Preguntas Frecuentes
+								</a>
+							</div>
 
 						</div>
 						<div class="col-lg-6 col-sm-12">
@@ -112,7 +114,7 @@
 										<textarea class="form-control" id="mensaje" rows="5" required
 											placeholder="Explique su problema *"></textarea>
 									</div>
-									<button type="submit" class="btn btn-enviar">
+									<button type="submit" class="btn btn-send">
 										<i class="fas fa-envelope"></i> ENVIAR
 									</button>
 								</div>
