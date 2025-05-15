@@ -15,14 +15,14 @@ import com.salesianostriana.dam.serranoruizmauro.service.ProductService;
 
 @Controller
 public class BrandController {
-	
+
 	@Autowired
 	private BrandService brandService;
 	@Autowired
 	private CategoryService categoryService;
 	@Autowired
 	private ProductService productService;
-	
+
 	@GetMapping("/brands")
 	public String showAllBrands(Model model) {
 		List<Brand> brands = brandService.findAll();
@@ -30,8 +30,8 @@ public class BrandController {
 		model.addAttribute("brands", brands);
 		model.addAttribute("resultCount", brands.size());
 		model.addAttribute("categories", categoryService.findAll());
-		
-		return "Marcas";
+
+		return "brand/Marcas";
 	}
 
 	@GetMapping("/brands/search")
@@ -43,47 +43,51 @@ public class BrandController {
 		model.addAttribute("search", search);
 		model.addAttribute("categories", categoryService.findAll());
 
-		return "Marcas";
+		return "brand/Marcas";
 	}
 
-	@GetMapping("/createBrand")
+	@GetMapping("/create-brand")
 	public String createBrandForm(Model model) {
 		model.addAttribute("brand", new Brand());
-		return "FormularioMarca";
+		return "brand/FormularioMarca";
 	}
 
-	@GetMapping("/modifyBrand/{id}")
+	@GetMapping("/modify-brand/{id}")
 	public String modifyBrandForm(Model model, @PathVariable Long id) {
 
 		Optional<Brand> brandOpt = brandService.findById(id);
 
 		if (brandOpt.isPresent()) {
 			model.addAttribute("brand", brandOpt.get());
-			return "FormularioMarca";
+			return "brand/FormularioMarca";
 		} else {
 			return "redirect:/brands";
 		}
 	}
 
-	@PostMapping("/saveBrand")
+	@PostMapping("/save-brand")
 	public String saveBrand(Brand brand) {
-		Optional <Brand> brandOpt = Optional.of(brand);
-		
-		Optional<Brand> oldBrand = brandService.findById(brandOpt.get().getId());
-		
-		if(brandOpt.isPresent()) {
-			if(!brandOpt.get().getBrandName().equals(oldBrand.get().getBrandName())) {
-				if (!brandService.findByName(brandOpt.get().getBrandName()).isEmpty()) {
+
+		if (brand.getId() != null) {
+			Optional<Brand> oldBrand = brandService.findById(brand.getId());
+
+			if (oldBrand.isPresent()) {
+				if (!brand.getBrandName().equals(oldBrand.get().getBrandName())
+						&& !brandService.findByName(brand.getBrandName()).isEmpty()) {
 					return "redirect:/brands";
 				}
 			}
-			brandService.save(brandOpt.get());
+		} else if (!brandService.findByName(brand.getBrandName()).isEmpty()) {
+
+			return "redirect:/brands";
 		}
+
+		brandService.save(brand);
 
 		return "redirect:/brands";
 	}
 
-	@GetMapping("/deleteBrand/{id}")
+	@GetMapping("/delete-brand/{id}")
 	public String deleteBrand(@PathVariable Long id) {
 		Optional<Brand> brandOpt = brandService.findById(id);
 

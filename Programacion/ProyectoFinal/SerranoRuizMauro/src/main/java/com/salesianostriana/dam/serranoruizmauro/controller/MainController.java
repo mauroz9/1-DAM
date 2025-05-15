@@ -11,46 +11,52 @@ public class MainController {
 
 	@Autowired
 	private CategoryService categoryService;
-	
+
 	@GetMapping("/")
 	public String mainWeb(Model model) {
 		model.addAttribute("categories", categoryService.findAll());
-		return "PaginaPrincipal";
+		return "web/PaginaPrincipal";
 	}
-	
+
 	@GetMapping("/shipping-return")
 	public String shippingReturnWeb(Model model) {
 		model.addAttribute("categories", categoryService.findAll());
-		return "EnvioDevolucion";
+		return "web/EnvioDevolucion";
 	}
-	
+
 	@GetMapping("/faq")
 	public String faqWeb(Model model) {
 		model.addAttribute("categories", categoryService.findAll());
-		return "PreguntasFrecuentes";
+		return "web/PreguntasFrecuentes";
 	}
-	
+
 	@GetMapping("/customer-service")
 	public String customerServiceWeb(Model model) {
 		model.addAttribute("categories", categoryService.findAll());
-		return "Contacto";
+		return "web/Contacto";
 	}
-	
+
 	@GetMapping("/privacy-policy")
 	public String socialWeb(Model model) {
 		model.addAttribute("categories", categoryService.findAll());
-		return "PoliticaPrivacidad";
+		return "web/PoliticaPrivacidad";
 	}
-	
+
 	@GetMapping("/terms-conditions")
 	public String termsConditionsWeb(Model model) {
 		model.addAttribute("categories", categoryService.findAll());
-		return "TerminosCondiciones";
+		return "web/TerminosCondiciones";
 	}
-	
+
 	@GetMapping("/cookies")
 	public String cookiesWeb(Model model) {
 		model.addAttribute("categories", categoryService.findAll());
-		return "Cookies";
+		return "web/Cookies";
+	}
+
+	@GetMapping("/error")
+	public String error(Model model) {
+		model.addAttribute("categories", categoryService.findAll());
+		return "error";
 	}
 }

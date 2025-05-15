@@ -30,19 +30,8 @@ public class ProductService extends BaseServiceImpl<Product, Long, ProductReposi
 	public List<Product> getAllByBrand(Long brandId){
 		return getVisibleProducts().stream().filter(p -> p.getBrand().getId().equals(brandId)).collect(Collectors.toList());
 	}
-
-	public List<Product> getFilteredAndSortedProducts(Long categoryId, String search, Integer sort) {
-		Stream<Product> productStream = getFilteredProductsStream(categoryId, search);
-		List<Product> products = productStream.collect(Collectors.toList());
-
-		if (sort != null) {
-			products.sort(productComparator(sort));
-		}
-
-		return products;
-	}
-
-	private Stream<Product> getFilteredProductsStream(Long categoryId, String search) {
+	
+	private Stream<Product> getFilteredProductsStream(Long categoryId, String search, Long brandId) {
 		Stream<Product> stream = getShuffledProducts().stream();
 
 		if (categoryId != null) {
@@ -52,11 +41,26 @@ public class ProductService extends BaseServiceImpl<Product, Long, ProductReposi
 		if (search != null && !search.isBlank()) {
 			stream = stream.filter(p -> p.getName().toLowerCase().contains(search.toLowerCase()));
 		}
+		
+		if (brandId != null) {
+	        stream = stream.filter(p -> p.getBrand() != null && p.getBrand().getId().equals(brandId));
+	    }
 
 		return stream;
 	}
 
-	private Comparator<Product> productComparator(Integer sort) {
+	public List<Product> getFilteredAndSortedProducts(Long categoryId, String search, Integer sort, Long brandId) {
+		Stream<Product> productStream = getFilteredProductsStream(categoryId, search, brandId);
+		List<Product> products = productStream.collect(Collectors.toList());
+
+		if (sort != null) {
+			products.sort(productComparator(sort));
+		}
+
+		return products;
+	}
+
+	public Comparator<Product> productComparator(Integer sort) {
 		Map<Integer, Comparator<Product>> sortOptions = Map.of(0, Comparator.comparing(Product::getDiscountedPrice), 1,
 				Comparator.comparing(Product::getDiscountedPrice).reversed(), 2, Comparator.comparing(Product::getName),
 				3, Comparator.comparing(Product::getName).reversed(), 4,
@@ -96,9 +100,9 @@ public class ProductService extends BaseServiceImpl<Product, Long, ProductReposi
 		List<Long> idsList = productRepo.findIds();
 		Collections.shuffle(idsList);
 		List<Product> products = productRepo.findAllById(idsList);
-
+		
 		products.sort(Comparator.comparingInt(p -> idsList.indexOf(p.getId())));
-
+		
 		return products;
 	}
 

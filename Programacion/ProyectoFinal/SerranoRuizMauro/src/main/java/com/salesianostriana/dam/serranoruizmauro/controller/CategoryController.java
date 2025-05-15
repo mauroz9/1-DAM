@@ -28,29 +28,29 @@ public class CategoryController {
 
 		model.addAttribute("categories", categories);
 		model.addAttribute("resultCount", categories.size());
-		return "Categorias";
+		return "category/Categorias";
 	}
 
-	@GetMapping("/createCategory")
+	@GetMapping("/create-category")
 	public String createCategoryForm(Model model) {
 		model.addAttribute("category", new Category());
-		return "FormularioCategoria";
+		return "category/FormularioCategoria";
 	}
 
-	@GetMapping("/modifyCategory/{id}")
+	@GetMapping("/modify-category/{id}")
 	public String modifyCategoryForm(Model model, @PathVariable Long id) {
 
 		Optional<Category> categoryOpt = categoryService.findById(id);
 
 		if (categoryOpt.isPresent()) {
 			model.addAttribute("category", categoryOpt.get());
-			return "FormularioCategoria";
+			return "category/FormularioCategoria";
 		} else {
 			return "redirect:/categories";
 		}
 	}
 
-	@PostMapping("/saveCategory")
+	@PostMapping("/save-category")
 	public String saveBrand(Category category) {
 		Optional<Category> categoryOpt = Optional.ofNullable(category);
 		
@@ -63,7 +63,7 @@ public class CategoryController {
 		return "redirect:/categories";
 	}
 
-	@GetMapping("/deleteCategory/{id}")
+	@GetMapping("/delete-category/{id}")
 	public String deleteCategory(@PathVariable Long id) {
 		Optional<Category> categoryOpt = categoryService.findById(id);
 
