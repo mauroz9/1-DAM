@@ -43,7 +43,7 @@ public class ProductService extends BaseServiceImpl<Product, Long, ProductReposi
 	}
 
 	private Stream<Product> getFilteredProductsStream(Long categoryId, String search) {
-		Stream<Product> stream = getShuffledProducts().stream().filter(Product::isVisible);
+		Stream<Product> stream = getShuffledProducts().stream();
 
 		if (categoryId != null) {
 			stream = stream.filter(p -> p.getCategory() != null && p.getCategory().getId().equals(categoryId));

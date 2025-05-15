@@ -1,14 +1,30 @@
 .nav-link {
-    position: relative;
-    transition: all 0.3s ease;
+	position: relative;
+	transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-    font-weight: bold;
-    border-bottom: red 2px solid;
+	font-weight: bold;
+	border-bottom: red 2px solid;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
+	display: block;
+	margin-top: 0;
+}
+
+form-control:focus {
+	box-shadow: none;
+	border-color: #000;
+}
+
+.btn-send {
+	background-color: #1aaf9c;
+	color: white;
+	font-weight: bold;
+	width: 100%;
+}
+
+.btn-send:hover {
+	background-color: #159b8a;
 }

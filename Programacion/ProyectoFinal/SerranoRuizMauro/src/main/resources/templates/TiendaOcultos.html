@@ -20,27 +20,24 @@
 
 	<main>
 		<section class="container my-4">
-			<div class="row align-items-center">
-				<div class="col-md-6">
-					<div class="mb-4">
-						<h2 class="fw-bold border-bottom pb-2">TABLA ROTA - SKATESHOP</h2>
-						<p class="text-muted">EL MEJOR MATERIAL</p>
-						<p>¿Estás buscando un nuevo skate o necesitas una nueva tabla o ruedas? En Tabla Rota Skate Shop
-							encontrarás todo lo que necesitas para patinar. Tanto si eres principiante como pro, tenemos
-							las mejores marcas y mucha información para
-							ayudarte en el camino.</p>
-					</div>
+			<div class="row align-items-center text-center">
+				<div class="col-3">
+					
 				</div>
-
-				<div class="col-md-6">
-					<img src="https://images.pexels.com/photos/5880093/pexels-photo-5880093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-						class="img-fluid rounded" alt="Tienda de skate">
+				<div class="col-6 mb-4">
+					<h2 class="fw-bold border-bottom pb-2">SECCIÓN DE PRODUCTOS OCULTOS</h2>
+					<p>Aquí se muestran los productos que se encuentran actualmente ocultos en la tienda debido a
+						que no tienen atibuido una categoria o marca, aparte de estar marcados como no visibles.</p>
+				</div>
+				<div class="col-3">
+					
 				</div>
 			</div>
 
 			<div class="row justify-content-center mt-5 g-2" th:if="${categories}">
 				<div class="col-auto col-md-3 col-lg-1 text-center" th:each="category : ${categories}">
-					<a th:if="${selectedCategoryId != category.id}" th:href="@{'/sale-products/' + ${category.id}}">
+					<a th:if="${selectedCategoryId != category.id}"
+						th:href="@{'/shop/hidden-products/' + ${category.id}}">
 						<button class="btn btn-outline-dark rounded-circle p-4 border-2">
 
 						</button>
@@ -61,7 +58,7 @@
 				<h1 class="fw-bold" th:text="${resultCount} + ' RESULTADOS'"></h1>
 				<div class="row mb-4">
 					<div class="col-8">
-						<form class="form-section d-flex" th:action="@{/sale-products/search}" method="get">
+						<form class="form-section d-flex" th:action="@{/shop/hidden-products/search}" method="get">
 							<input class="form-control me-2" type="search" name="search" placeholder="Buscar">
 							<button class="btn btn-outline" type="submit"><i class="bi bi-search"></i></button>
 						</form>
@@ -89,8 +86,8 @@
 					</a>
 				</div>
 				<div class="col-6">
-					<a href="/shop/hidden-products" class="btn btn-dark btn-lg">
-						<i class="bi bi-eye"></i> Ver productos ocultos
+					<a href="/shop" class="btn btn-dark btn-lg">
+						<i class="bi bi-arrow-left"></i> Volver a la tienda
 					</a>
 				</div>
 			</div>

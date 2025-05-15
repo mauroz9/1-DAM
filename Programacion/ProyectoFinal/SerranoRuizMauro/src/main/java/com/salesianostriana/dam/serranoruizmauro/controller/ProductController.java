@@ -37,8 +37,9 @@ public class ProductController {
 			@RequestParam(name = "sort", required = false) Integer sort,
 			@RequestParam(name = "search", required = false) String search) {
 
-		List<Product> products = productService.getFilteredAndSortedProducts(id, search, sort);
-
+		Stream<Product> productsStream = productService.getFilteredAndSortedProducts(id, search, sort).stream().filter(Product::isVisible);
+		List <Product> products = productsStream.collect(Collectors.toList());
+		
 		model.addAttribute("products", products);
 		model.addAttribute("categories", categoryService.findAll());
 		model.addAttribute("resultCount", products.size());
@@ -55,7 +56,7 @@ public class ProductController {
 			@RequestParam(name = "sort", required = false) Integer sort,
 			@RequestParam(name = "search", required = false) String search) {
 
-		Stream<Product> productStream = productService.getFilteredAndSortedProducts(id, search, sort).stream().filter(p -> p.getFinalDiscount()>0);
+		Stream<Product> productStream = productService.getFilteredAndSortedProducts(id, search, sort).stream().filter(Product::isVisible).filter(p -> p.getFinalDiscount()>0);
 		List <Product> products = productStream.collect(Collectors.toList());
 		
 		model.addAttribute("products", products);
@@ -66,6 +67,25 @@ public class ProductController {
 		model.addAttribute("selectedCategoryId", id);
 
 		return "TiendaSale";
+	}
+	
+	@GetMapping({ "/shop/hidden-products", "/shop/hidden-products/{id}", "/shop/hidden-products/search" })
+	public String showHiddenProducts(Model model,
+			@PathVariable(required = false) Long id,
+			@RequestParam(name = "sort", required = false) Integer sort,
+			@RequestParam(name = "search", required = false) String search) {
+
+		Stream<Product> productStream = productService.getFilteredAndSortedProducts(id, search, sort).stream().filter(p -> !p.isVisible()).filter(p -> p.getFinalDiscount()>0);
+		List <Product> products = productStream.collect(Collectors.toList());
+		
+		model.addAttribute("products", products);
+		model.addAttribute("categories", categoryService.findAll());
+		model.addAttribute("resultCount", products.size());
+		model.addAttribute("sort", sort);
+		model.addAttribute("search", search);
+		model.addAttribute("selectedCategoryId", id);
+
+		return "TiendaOcultos";
 	}
 
 	@GetMapping("/create-product")
