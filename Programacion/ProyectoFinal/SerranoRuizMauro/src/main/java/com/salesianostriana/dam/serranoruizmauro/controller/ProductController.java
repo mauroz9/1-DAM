@@ -55,7 +55,7 @@ public class ProductController {
 			@RequestParam(name = "sort", required = false) Integer sort,
 			@RequestParam(name = "search", required = false) String search) {
 
-		Stream<Product> productStream = productService.getFilteredAndSortedProducts(id, search, sort).stream().filter(p -> p.getDiscount()>0);
+		Stream<Product> productStream = productService.getFilteredAndSortedProducts(id, search, sort).stream().filter(p -> p.getFinalDiscount()>0);
 		List <Product> products = productStream.collect(Collectors.toList());
 		
 		model.addAttribute("products", products);
@@ -68,7 +68,7 @@ public class ProductController {
 		return "TiendaSale";
 	}
 
-	@GetMapping("/createProduct")
+	@GetMapping("/create-product")
 	public String createProductForm(Model model) {
 		model.addAttribute("categories", categoryService.findAll());
 		model.addAttribute("brands", brandService.findAll());
@@ -76,7 +76,7 @@ public class ProductController {
 		return "FormularioProducto";
 	}
 
-	@PostMapping("/saveProduct")
+	@PostMapping("/save-product")
 	public String saveProduct(Product product) {
 		if (product.getId() == null) {
 			product.setCreationDate(LocalDateTime.now().withNano(0));

@@ -23,4 +23,6 @@ public class BrandService extends BaseServiceImpl<Brand, Long, BrandRepository> 
 				.collect(Collectors.toList());
 
 	}
+	
+	
 }

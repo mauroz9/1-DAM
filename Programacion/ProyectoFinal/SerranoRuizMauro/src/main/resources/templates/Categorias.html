@@ -19,6 +19,12 @@
 			<h1 class="fw-bold">Gestión de Categorias</h1>
 		</div>
 
+		<div class="text-center m-4">
+			<a href="/createCategory" class="btn btn-dark btn-lg">
+				<i class="bi bi-plus-lg"></i> Añadir nueva categoría
+			</a>
+		</div>
+
 		<div class="row" th:if="${categories}">
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-4" th:each="category : ${categories}">
 				<div class="card h-100 shadow-sm">
@@ -26,7 +32,8 @@
 						<div class="row">
 							<div class="d-flex align-items-center">
 								<div>
-									<h5 class="card-title fw-bold" th:text="${category.categoryName}">Nombre de la Categoría</h5>
+									<h5 class="card-title fw-bold" th:text="${category.categoryName}">Nombre de la
+										Categoría</h5>
 									<p class="card-text text-muted" th:text="'ID: ' + ${category.id}"></p>
 								</div>
 							</div>
@@ -42,11 +49,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="text-center mt-4">
-			<a href="/createCategory" class="btn btn-dark">
-				<i class="bi bi-plus-lg"></i> Añadir nueva categoría
-			</a>
 		</div>
 
 	</main>

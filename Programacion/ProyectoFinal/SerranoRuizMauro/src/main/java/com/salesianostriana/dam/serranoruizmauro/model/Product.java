@@ -57,11 +57,14 @@ public class Product {
 		this.brand = brand;
 	}
 
+	public double getFinalDiscount() {
+		double brandDiscount = (this.getBrand() != null) ? this.getBrand().getDiscount() : 0.0;
+
+		return Math.min(discount + brandDiscount, 100.00);
+	}
+	
 	public double getDiscountedPrice() {
-		if (discount > 0) {
-			return price - (price * discount / 100.0);
-		}
-		return price;
+		return price * (1 - getFinalDiscount()/100);
 	}
 
 }

@@ -33,6 +33,12 @@
 					</div>
 
 					<div class="mb-3">
+						<label for="brandDiscount" class="form-label fw-bold">Descuento por Marca (%)</label>
+						<input type="number" th:field="*{discount}" step="0.01" min="0" max="100" class="form-control"
+							id="brandDiscount" value="" required>
+					</div>
+
+					<div class="mb-3">
 						<label for="brandLogo" class="form-label fw-bold">Logo</label>
 						<input type="url" th:field="*{logo}" class="form-control" id="brandLogo">
 					</div>

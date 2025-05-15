@@ -69,10 +69,15 @@ public class BrandController {
 	public String saveBrand(Brand brand) {
 		Optional <Brand> brandOpt = Optional.of(brand);
 		
+		Optional<Brand> oldBrand = brandService.findById(brandOpt.get().getId());
+		
 		if(brandOpt.isPresent()) {
-			if(brandService.findByName(brandOpt.get().getBrandName()).isEmpty()) {
-				brandService.save(brandOpt.get());
+			if(!brandOpt.get().getBrandName().equals(oldBrand.get().getBrandName())) {
+				if (!brandService.findByName(brandOpt.get().getBrandName()).isEmpty()) {
+					return "redirect:/brands";
+				}
 			}
+			brandService.save(brandOpt.get());
 		}
 
 		return "redirect:/brands";

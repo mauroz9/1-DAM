@@ -26,6 +26,10 @@ public class ProductService extends BaseServiceImpl<Product, Long, ProductReposi
 	public List<Product> getVisibleProducts() {
 		return productRepo.findAllVisibleProducts();
 	}
+	
+	public List<Product> getAllByBrand(Long brandId){
+		return getVisibleProducts().stream().filter(p -> p.getBrand().getId().equals(brandId)).collect(Collectors.toList());
+	}
 
 	public List<Product> getFilteredAndSortedProducts(Long categoryId, String search, Integer sort) {
 		Stream<Product> productStream = getFilteredProductsStream(categoryId, search);
