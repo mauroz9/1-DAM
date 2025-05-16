@@ -15,7 +15,7 @@
 
 <body class="d-flex flex-column min-vh-100">
 
-	<header th:replace = "~{Fragments :: header}"></header>
+	<header th:replace="~{Fragments :: header}"></header>
 
 	<main class="container my-2">
 
@@ -27,7 +27,9 @@
 
 		<div class="row mt-5">
 			<div class="col-md-5 d-flex justify-content-center">
-				<img th:src="@{${product.image}}" th:alt="${product.altText}" class="img-fluid rounded shadow-sm w-75">
+				<img th:src="${#strings.isEmpty(product.image) ? 'https://www.shutterstock.com/image-vector/image-icon-trendy-flat-style-600nw-643080895.jpg' : product.image}"
+					th:alt="${#strings.isEmpty(product.altText) ? 'Imagen por defecto' : product.altText}"
+					class="img-fluid rounded shadow-sm w-75">
 			</div>
 
 			<div class="col-md-7">
