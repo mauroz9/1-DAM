@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<header th:replace="Fragments :: header">
+	<header th:replace="~{Fragments :: header}">
 
 	</header>
 
@@ -81,11 +81,9 @@
 						<div class="card-body">
 							<h5 class="card-title">Marcas destacadas</h5>
 							<p class="card-text">
-								Descubre las mejores marcas del mundo del skate: AntiHero, Trasher, Baker y muchas más.
-								En Tabla Rota
-								Skate Shop encontrarás una amplia variedad de productos de estas marcas, desde tablas
-								completas hasta
-								cada uno de sus componentes al mejor precio y con
+								Descubre las mejores marcas del mundo del skate: AntiHero, Trasher, Baker y muchas
+								más.En Tabla Rota Skate Shop encontrarás una amplia variedad de productos de estas
+								marcas,desde tablas completas hasta cada uno de sus componentes al mejor precio y con
 								ventajas exclusivas.
 							</p>
 						</div>
@@ -94,16 +92,15 @@
 
 				<div class="col-md-4">
 					<div class="card h-100 border-0 shadow">
-						<img th:src="@{../images/PremiumClub.png}" class="card-img-top" alt="Premium Club">
+						<img th:src="@{../images/TablaRotaBanner.png}" class="card-img-top" alt="Premium Club">
 						<div class="card-body">
-							<h5 class="card-title">Premium Club</h5>
+							<h5 class="card-title">¿Quiénes somos?</h5>
 							<p class="card-text">
-								En el Tabla Rota Premium Club, recibirás puntos a través de diversas actividades, tales
-								como realizar
-								pedidos y reseñas de productos. Hay dos tipos de puntos: Puntos Premium Club y Puntos de
-								Estatus. Puedes
-								cambiar tus Puntos Premium Club por recompensas
-								exclusivas. Tus Puntos de Estatus determinarán tu Estatus Premium Club.
+								En Tabla Rota Skate Shop nos comprometemos con la comunidad de skaters de España y por
+								eso os brindamos el material más duro al mejor precio. En nuestra tienda podrás
+								encontrar infinidad de productos y el mejor servicio, unido a una gran comunidad activa
+								en el mundo del skate
+
 							</p>
 						</div>
 					</div>
@@ -116,8 +113,8 @@
 							<h5 class="card-title">Redes Sociales</h5>
 							<p class="card-text">
 								Recuerda seguirnos en nuestras redes sociales oficiales en las que constantemente
-								compartimos contenido
-								relacionado con el skate, avisos para nuestros eventos, sorteos y muchas mas ventajas.
+								compartimos contenido relacionado con el skate, avisos para nuestros eventos, sorteos y
+								muchas mas ventajas.
 								<br />
 								¿A qué esperas para unirte a nuestra comunidad?. Nos podras encontrar
 								como @tablarota en Instagram, TikTok y YouTube.
@@ -130,7 +127,7 @@
 		</div>
 	</main>
 
-	<footer class="mt-5 border-top" th:replace="Fragments :: footer">
+	<footer class="mt-5 border-top" th:replace="~{Fragments :: footer}">
 
 	</footer>
 
