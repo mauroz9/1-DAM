@@ -66,5 +66,9 @@ public class Product {
 	public double getDiscountedPrice() {
 		return price * (1 - getFinalDiscount()/100);
 	}
+	
+	public boolean isOnSale() {
+	    return getFinalDiscount() > 0;
+	}
 
 }

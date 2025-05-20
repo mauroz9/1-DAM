@@ -62,9 +62,101 @@
 			</div>
 		</nav>
 	</header>
-	
+
 	<main>
-		
+		<div th:fragment="productDeleteModal">
+			<div th:each="product : ${products}">
+				<div class="modal fade" th:id="'deleteModal' + ${product.id}" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-danger text-white">
+								<h5 class="modal-title">Confirmar eliminación</h5>
+								<button type="button" class="btn-close btn-close-white"
+									data-bs-dismiss="modal"></button>
+							</div>
+							<div class="modal-body">
+								¿Estás seguro de eliminar este producto?
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">Cancelar</button>
+								<a th:href="@{'/delete-product/' + ${product.id}}" class="btn btn-danger">Eliminar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div th:fragment="categoryDeleteModal">
+			<div th:each="category : ${categories}">
+				<div class="modal fade" th:id="'deleteModal' + ${category.id}" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-danger text-white">
+								<h5 class="modal-title">Confirmar eliminación</h5>
+								<button type="button" class="btn-close btn-close-white"
+									data-bs-dismiss="modal"></button>
+							</div>
+							<div class="modal-body">
+								¿Estás seguro de eliminar esta categoría?. Los productos asignados pasaran a no estar
+								visibles y se desasignaran de esta.
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">Cancelar</button>
+								<a th:href="@{'/delete-category/' + ${category.id}}" class="btn btn-danger">Eliminar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div th:fragment="brandDeleteModal">
+			<div th:each="brand : ${brands}">
+				<div class="modal fade" th:id="'deleteModal' + ${brand.id}" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-danger text-white">
+								<h5 class="modal-title">Confirmar eliminación</h5>
+								<button type="button" class="btn-close btn-close-white"
+									data-bs-dismiss="modal"></button>
+							</div>
+							<div class="modal-body">
+								¿Estás seguro de eliminar esta marca?. Los productos asignados pasaran a no estar
+								visibles y se desasignaran de esta.
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">Cancelar</button>
+								<a th:href="@{'/delete-brand/' + ${brand.id}}" class="btn btn-danger">Eliminar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div th:fragment="successMessage">
+			<div th:if="${showSuccessModal}" class="modal fade show" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header bg-success text-white">
+							<h5 class="modal-title">Operación exitosa</h5>
+							<a th:href="@{/products}" class="btn-close btn-close-white"></a>
+						</div>
+						<div class="modal-body">
+							<p th:text="${successMessage}">Mensaje de éxito</p>
+						</div>
+						<div class="modal-footer">
+							<a th:href="@{/products}" class="btn btn-success">Aceptar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</main>
 
 	<footer class="mt-5 border-top" th:fragment="footer">

@@ -58,7 +58,7 @@ public class ProductController {
 			@RequestParam(name = "search", required = false) String search,
 			@RequestParam(name = "brand", required = false) Long brandId) {
 
-		Stream<Product> productStream = productService.getFilteredAndSortedProducts(categoryId, search, sort, brandId).stream().filter(Product::isVisible).filter(p -> p.getFinalDiscount()>0);
+		Stream<Product> productStream = productService.getFilteredAndSortedProducts(categoryId, search, sort, brandId).stream().filter(Product::isVisible).filter(Product::isOnSale);
 		List <Product> products = productStream.collect(Collectors.toList());
 		
 		model.addAttribute("products", products);
