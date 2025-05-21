@@ -34,129 +34,220 @@
 					<img src="https://images.pexels.com/photos/5880093/pexels-photo-5880093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						class="img-fluid rounded" alt="Tienda de skate">
 				</div>
-			</div>
 
-			<div class="row justify-content-center mt-5 g-2" th:if="${categories}">
-				<div class="col-4 col-lg-1 text-center" th:each="category : ${categories}">
-					<a th:if="${selectedCategoryId != category.id}" th:href="@{'/shop/' + ${category.id}}">
-						<button class="btn btn-outline-dark rounded-circle p-4 border-2">
-
-						</button>
-					</a>
-					<a th:if="${selectedCategoryId == category.id}" th:href="@{'/shop'}">
-						<button class="btn btn-dark rounded-circle p-4 border-2">
-
-						</button>
-					</a>
-					<p class="d-block mt-2" th:text="${category.categoryName}">Nombre de la categoría</p>
+				<div class="container-fluid d-lg-none mt-4 bg-white">
+					<button class="btn btn-dark w-100 rounded-0" type="button" data-bs-toggle="offcanvas"
+						data-bs-target="#shopSidebar">
+						<i class="bi bi-funnel-fill"></i> Filtros y Búsqueda
+					</button>
 				</div>
-
 			</div>
 		</section>
 
 		<section class="container my-4">
-			<div class="mb-4">
-				<div class="row align-items-center">
-					<div class="col-12 col-md-6 mb-3 mb-md-0">
-						<h1 class="fw-bold text-center text-md-start" th:text="${resultCount} + ' RESULTADOS'">0
-							RESULTADOS</h1>
-					</div>
+			<div class="mb-4 d-sm-block d-lg-block">
+				<h1 class="fw-bold" th:text="${resultCount} + ' RESULTADOS'">0 RESULTADOS</h1>
+			</div>
+			
+			<div th:replace="~{Fragments :: errorMessageModal}"></div>
+			<div th:replace="~{Fragments :: successMessageModal}"></div>
 
-					<div class="col-12 col-md-6">
-						<div class="row g-2">
-							<div class="col-12 col-sm-7">
-								<form class="d-flex" th:action="@{/shop/search}" method="get">
-									<input class="form-control me-2" type="search" name="search" placeholder="Buscar">
-									<button class="btn btn-outline-dark" type="submit">
-										<i class="bi bi-search"></i>
+			<div class="row">
+				<div class="row my-4 col-lg-9" th:if="${products}">
+					<div class="col-lg-4 col-md-6 col-sm-12 mb-5" th:each="product : ${products}">
+						<div class="card h-100 shadow">
+							<img th:src="${#strings.isEmpty(product.image) ? 'https://www.shutterstock.com/image-vector/image-icon-trendy-flat-style-600nw-643080895.jpg' : product.image}"
+								th:alt="${#strings.isEmpty(product.altText) ? 'Imagen por defecto' : product.altText}"
+								class="card-img-top" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title" th:text="${product.name}">Nombre del producto</h5>
+								<p class="card-text" th:text="${product.description}">Descripción del producto</p>
+								<div>
+									<h5 class="card-text"
+										th:if="${product.getFinalDiscount == null or product.getFinalDiscount == 0}"
+										th:text="${#numbers.formatDecimal(product.price, 1, 2) + '€'}">
+										Precio del producto
+									</h5>
+
+									<h5 class="card-text"
+										th:if="${product.getFinalDiscount != null and product.getFinalDiscount > 0}">
+
+										<span class="text-danger"
+											th:text="${#numbers.formatDecimal(product.getDiscountedPrice, 1, 2) + '€'}">
+										</span>
+
+										<span class="text-decoration-line-through ms-2"
+											th:text="${#numbers.formatDecimal(product.price, 1, 2) + ' €'}">
+										</span>
+
+										<span class="text-danger"
+											th:text="${'-' + #numbers.formatDecimal(product.getFinalDiscount, 1, 0) + '%'}">
+
+										</span>
+									</h5>
+								</div>
+
+								<div class="d-flex justify-content-end">
+									<a th:href="@{'/shop/sale-products/product/' + ${product.id}}"
+										class="btn btn-sm btn-outline-dark">
+										<i class="bi bi-arrow-bar-left p-1"></i>Ver más</a>
+								</div>
+
+								<div class="mt-3 d-flex justify-content-between">
+									<a th:href="@{'/modify-product/' + ${product.id}}"
+										class="btn btn-outline-dark btn-sm">
+										<i class="bi bi-pencil"></i> Modificar
+									</a>
+									<button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+										th:data-bs-target="'#deleteModal' + ${product.id}">
+										<i class="bi bi-x"></i> Eliminar
 									</button>
-								</form>
-							</div>
-							<div class="col-12 col-sm-5">
-								<form action="#" method="get">
-									<select class="form-select w-100" name="sort" onchange="this.form.submit()"
-										aria-label="Ordenar productos">
-										<option value="" th:selected="${sort == null}">Ordenar</option>
-										<option value="0" th:selected="${sort == 0}">Precio: Menor a mayor</option>
-										<option value="1" th:selected="${sort == 1}">Precio: Mayor a menor</option>
-										<option value="2" th:selected="${sort == 2}">Nombre: A-Z</option>
-										<option value="3" th:selected="${sort == 3}">Nombre: Z-A</option>
-										<option value="4" th:selected="${sort == 4}">Más recientes</option>
-									</select>
-								</form>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="row m-4 text-center">
-				<div class="col-6">
-					<a href="/create-product" class="btn btn-dark btn-lg">
-						<i class="bi bi-plus-lg"></i> Añadir nuevo producto
-					</a>
-				</div>
-				<div class="col-6">
-					<a href="/shop/hidden-products" class="btn btn-dark btn-lg">
-						<i class="bi bi-eye"></i> Ver productos ocultos
-					</a>
-				</div>
-			</div>
-
-			<div class="row mt-5" th:if="${products}">
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-5" th:each="product : ${products}">
-					<div class="card h-100 shadow">
-						<img th:src="${#strings.isEmpty(product.image) ? 'https://www.shutterstock.com/image-vector/image-icon-trendy-flat-style-600nw-643080895.jpg' : product.image}"
-							th:alt="${#strings.isEmpty(product.altText) ? 'Imagen por defecto' : product.altText}"
-							class="card-img-top" />
-						<div class="card-body d-flex flex-column">
-							<h5 class="card-title" th:text="${product.name}">Nombre del producto</h5>
-							<p class="card-text" th:text="${product.description}">Descripción del producto</p>
-							<div>
-								<h5 class="card-text"
-									th:if="${product.getFinalDiscount == null or product.getFinalDiscount == 0}"
-									th:text="${#numbers.formatDecimal(product.price, 1, 2) + '€'}">
-									Precio del producto
-								</h5>
-
-								<h5 class="card-text"
-									th:if="${product.getFinalDiscount != null and product.getFinalDiscount > 0}">
-
-									<span class="text-danger"
-										th:text="${#numbers.formatDecimal(product.getDiscountedPrice, 1, 2) + '€'}">
-									</span>
-
-									<span class="text-decoration-line-through ms-2"
-										th:text="${#numbers.formatDecimal(product.price, 1, 2) + ' €'}">
-									</span>
-
-									<span class="text-danger"
-										th:text="${'-' + #numbers.formatDecimal(product.getFinalDiscount, 1, 0) + '%'}">
-
-									</span>
-								</h5>
+				<div class="col-lg-3 d-none d-lg-block">
+					<div class="sticky-top pt-3">
+						<div class="card shadow-sm">
+							<div class="card-header bg-dark text-white">
+								<h5 class="mb-0">Filtros y Búsqueda</h5>
 							</div>
+							<div class="card-body">
+								<form method="get" th:action="@{/shop/sale-products}">
+									<div class="mb-3">
+										<label for="search" class="form-label">Buscar</label>
+										<div class="input-group">
+											<input type="search" class="form-control" id="search" name="search"
+												placeholder="Buscar..." th:value="${search}">
+											<button class="btn btn-dark" type="submit">
+												<i class="bi bi-search"></i>
+											</button>
+										</div>
+									</div>
 
-							<div class="d-flex justify-content-end">
-								<a th:href="@{'/shop/sale-products/product/' + ${product.id}}"
-									class="btn btn-sm btn-outline-dark">
-									<i class="bi bi-arrow-bar-left p-1"></i>Ver más</a>
-							</div>
+									<div class="mb-3">
+										<label for="categoryId" class="form-label">Categoría</label>
+										<select class="form-select" id="categoryId" name="categoryId">
+											<option value="" th:selected="${selectedCategoryId == null}">
+												Todas las categorías</option>
+											<option th:each="category : ${categories}" th:value="${category.id}"
+												th:text="${category.categoryName}"
+												th:selected="${selectedCategoryId == category.id}"></option>
+										</select>
+									</div>
 
-							<div class="mt-3 d-flex justify-content-between">
-								<a th:href="@{'/modify-product/' + ${product.id}}" class="btn btn-outline-dark btn-sm">
-									<i class="bi bi-pencil"></i> Modificar
-								</a>
-								<button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
-									th:data-bs-target="'#deleteModal' + ${product.id}">
-									<i class="bi bi-x"></i> Eliminar
-								</button>
+									<div class="mb-3">
+										<label for="brand" class="form-label">Marca</label>
+										<select class="form-select" id="brand" name="brand">
+											<option value="" th:selected="${selectedBrandId == null}">Todas
+												las marcas</option>
+											<option th:each="brand : ${brands}" th:value="${brand.id}"
+												th:text="${brand.brandName}"
+												th:selected="${selectedBrandId == brand.id}"></option>
+										</select>
+									</div>
+
+									<div class="mb-3">
+										<label for="sort" class="form-label">Ordenar por</label>
+										<select class="form-select" id="sort" name="sort">
+											<option value="" th:selected="${sort == null}">Seleccionar orden
+											</option>
+											<option value="0" th:selected="${sort == 0}">Precio: Menor a
+												mayor</option>
+											<option value="1" th:selected="${sort == 1}">Precio: Mayor a
+												menor</option>
+											<option value="2" th:selected="${sort == 2}">Nombre: A-Z
+											</option>
+											<option value="3" th:selected="${sort == 3}">Nombre: Z-A
+											</option>
+											<option value="4" th:selected="${sort == 4}">Más recientes
+											</option>
+										</select>
+									</div>
+
+									<button type="submit" class="btn btn-dark w-100">Aplicar
+										filtros</button>
+								</form>
+
+								<div class="mt-4 pt-3 border-top">
+									<a href="/create-product" class="btn btn-dark w-100 mb-2">
+										<i class="bi bi-plus-lg"></i> Añadir producto
+									</a>
+									<a href="/shop/hidden-products" class="btn btn-dark w-100">
+										<i class="bi bi-eye"></i> Productos ocultos
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<div class="offcanvas offcanvas-start" tabindex="-1" id="shopSidebar" aria-labelledby="shopSidebarLabel">
+			<div class="offcanvas-header bg-dark text-white">
+				<h5 class="offcanvas-title" id="shopSidebarLabel">Filtros y Búsqueda</h5>
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+					aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<form method="get" th:action="@{/shop/sale-products}">
+					<div class="mb-3">
+						<label for="search" class="form-label">Buscar</label>
+						<div class="input-group">
+							<input type="search" class="form-control" id="search" name="search" placeholder="Buscar..."
+								th:value="${search}">
+							<button class="btn btn-dark" type="submit">
+								<i class="bi bi-search"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="mb-3">
+						<label for="categoryId" class="form-label">Categoría</label>
+						<select class="form-select" id="categoryId" name="categoryId">
+							<option value="" th:selected="${selectedCategoryId == null}">Todas las categorías</option>
+							<option th:each="category : ${categories}" th:value="${category.id}"
+								th:text="${category.categoryName}" th:selected="${selectedCategoryId == category.id}">
+							</option>
+						</select>
+					</div>
+
+					<div class="mb-3">
+						<label for="brand" class="form-label">Marca</label>
+						<select class="form-select" id="brand" name="brand">
+							<option value="" th:selected="${selectedBrandId == null}">Todas las marcas</option>
+							<option th:each="brand : ${brands}" th:value="${brand.id}" th:text="${brand.brandName}"
+								th:selected="${selectedBrandId == brand.id}"></option>
+						</select>
+					</div>
+
+					<div class="mb-3">
+						<label for="sort" class="form-label">Ordenar por</label>
+						<select class="form-select" id="sort" name="sort">
+							<option value="" th:selected="${sort == null}">Seleccionar orden</option>
+							<option value="0" th:selected="${sort == 0}">Precio: Menor a mayor</option>
+							<option value="1" th:selected="${sort == 1}">Precio: Mayor a menor</option>
+							<option value="2" th:selected="${sort == 2}">Nombre: A-Z</option>
+							<option value="3" th:selected="${sort == 3}">Nombre: Z-A</option>
+							<option value="4" th:selected="${sort == 4}">Más recientes</option>
+						</select>
+					</div>
+
+					<button type="submit" class="btn btn-dark w-100">Aplicar filtros</button>
+				</form>
+
+				<div class="mt-4 pt-3 border-top">
+					<a href="/create-product" class="btn btn-dark w-100 mb-2">
+						<i class="bi bi-plus-lg"></i> Añadir producto
+					</a>
+					<a href="/shop/hidden-products" class="btn btn-dark w-100">
+						<i class="bi bi-eye"></i> Productos ocultos
+					</a>
+				</div>
+			</div>
+		</div>
 
 		<div th:replace="~{Fragments :: productDeleteModal}"></div>
 

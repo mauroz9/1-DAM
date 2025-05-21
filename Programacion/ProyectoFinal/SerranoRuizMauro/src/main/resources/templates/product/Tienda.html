@@ -46,13 +46,15 @@
 								<i class="bi bi-funnel-fill"></i> Filtros y Búsqueda
 							</button>
 						</div>
-
 					</section>
 
 					<section class="container my-4">
 						<div class="mb-4 d-sm-block d-lg-block">
 							<h1 class="fw-bold" th:text="${resultCount} + ' RESULTADOS'">0 RESULTADOS</h1>
 						</div>
+						
+						<div th:replace="~{Fragments :: errorMessageModal}"></div>
+						<div th:replace="~{Fragments :: successMessageModal}"></div>
 
 						<div class="row">
 							<div class="row my-4 col-lg-9" th:if="${products}">
@@ -112,46 +114,49 @@
 								</div>
 							</div>
 							<div class="col-lg-3 d-none d-lg-block">
-								<div class="sticky-top pt-3" style="top: 80px;">
+								<div class="sticky-top pt-3">
 									<div class="card shadow-sm">
 										<div class="card-header bg-dark text-white">
 											<h5 class="mb-0">Filtros y Búsqueda</h5>
 										</div>
 										<div class="card-body">
-											<!-- Formulario de búsqueda -->
-											<form class="mb-4" th:action="@{/shop/search}" method="get">
-												<div class="input-group">
-													<input class="form-control" type="search" name="search"
-														placeholder="Buscar..." th:value="${searchQuery}">
-													<button class="btn btn-dark" type="submit">
-														<i class="bi bi-search"></i>
-													</button>
+											<form method="get" th:action="@{/shop}">
+												<div class="mb-3">
+													<label for="search" class="form-label">Buscar</label>
+													<div class="input-group">
+														<input type="search" class="form-control" id="search"
+															name="search" placeholder="Buscar..." th:value="${search}">
+														<button class="btn btn-dark" type="submit">
+															<i class="bi bi-search"></i>
+														</button>
+													</div>
 												</div>
-											</form>
 
-											<!-- Filtro por categorías -->
-											<div class="mb-4" th:if="${categories}">
-												<h6 class="border-bottom pb-2">Categorías</h6>
-												<div class="list-group">
-													<a th:href="@{'/shop'}"
-														class="list-group-item list-group-item-action"
-														th:classappend="${selectedCategoryId == null} ? 'active' : ''">
-														Todas las categorías
-													</a>
-													<a th:each="category : ${categories}"
-														th:href="@{'/shop/' + ${category.id}}"
-														class="list-group-item list-group-item-action"
-														th:classappend="${selectedCategoryId == category.id} ? 'active' : ''"
-														th:text="${category.categoryName}">
-													</a>
+												<div class="mb-3">
+													<label for="categoryId" class="form-label">Categoría</label>
+													<select class="form-select" id="categoryId" name="categoryId">
+														<option value="" th:selected="${selectedCategoryId == null}">
+															Todas las categorías</option>
+														<option th:each="category : ${categories}"
+															th:value="${category.id}" th:text="${category.categoryName}"
+															th:selected="${selectedCategoryId == category.id}"></option>
+													</select>
 												</div>
-											</div>
 
-											<div class="mb-3">
-												<h6 class="border-bottom pb-2">Ordenar por</h6>
-												<form method="get">
-													<select class="form-select" name="sort"
-														onchange="this.form.submit()">
+												<div class="mb-3">
+													<label for="brand" class="form-label">Marca</label>
+													<select class="form-select" id="brand" name="brand">
+														<option value="" th:selected="${selectedBrandId == null}">Todas
+															las marcas</option>
+														<option th:each="brand : ${brands}" th:value="${brand.id}"
+															th:text="${brand.brandName}"
+															th:selected="${selectedBrandId == brand.id}"></option>
+													</select>
+												</div>
+
+												<div class="mb-3">
+													<label for="sort" class="form-label">Ordenar por</label>
+													<select class="form-select" id="sort" name="sort">
 														<option value="" th:selected="${sort == null}">Seleccionar orden
 														</option>
 														<option value="0" th:selected="${sort == 0}">Precio: Menor a
@@ -165,8 +170,11 @@
 														<option value="4" th:selected="${sort == 4}">Más recientes
 														</option>
 													</select>
-												</form>
-											</div>
+												</div>
+
+												<button type="submit" class="btn btn-dark w-100">Aplicar
+													filtros</button>
+											</form>
 
 											<div class="mt-4 pt-3 border-top">
 												<a href="/create-product" class="btn btn-dark w-100 mb-2">
@@ -193,35 +201,40 @@
 					aria-label="Close"></button>
 			</div>
 			<div class="offcanvas-body">
-				<form class="mb-4" th:action="@{/shop/search}" method="get">
-					<div class="input-group">
-						<input class="form-control" type="search" name="search" placeholder="Buscar..."
-							th:value="${searchQuery}">
-						<button class="btn btn-dark" type="submit">
-							<i class="bi bi-search"></i>
-						</button>
+				<form method="get" th:action="@{/shop}">
+					<div class="mb-3">
+						<label for="search" class="form-label">Buscar</label>
+						<div class="input-group">
+							<input type="search" class="form-control" id="search" name="search" placeholder="Buscar..."
+								th:value="${search}">
+							<button class="btn btn-dark" type="submit">
+								<i class="bi bi-search"></i>
+							</button>
+						</div>
 					</div>
-				</form>
 
-				<div class="mb-4" th:if="${categories}">
-					<h6 class="border-bottom pb-2">Categorías</h6>
-					<div class="list-group">
-						<a th:href="@{'/shop'}" class="list-group-item list-group-item-action"
-							th:classappend="${selectedCategoryId == null} ? 'active' : ''">
-							Todas las categorías
-						</a>
-						<a th:each="category : ${categories}" th:href="@{'/shop/' + ${category.id}}"
-							class="list-group-item list-group-item-action"
-							th:classappend="${selectedCategoryId == category.id} ? 'active' : ''"
-							th:text="${category.categoryName}">
-						</a>
+					<div class="mb-3">
+						<label for="categoryId" class="form-label">Categoría</label>
+						<select class="form-select" id="categoryId" name="categoryId">
+							<option value="" th:selected="${selectedCategoryId == null}">Todas las categorías</option>
+							<option th:each="category : ${categories}" th:value="${category.id}"
+								th:text="${category.categoryName}" th:selected="${selectedCategoryId == category.id}">
+							</option>
+						</select>
 					</div>
-				</div>
 
-				<div class="mb-3">
-					<h6 class="border-bottom pb-2">Ordenar por</h6>
-					<form method="get">
-						<select class="form-select" name="sort" onchange="this.form.submit()">
+					<div class="mb-3">
+						<label for="brand" class="form-label">Marca</label>
+						<select class="form-select" id="brand" name="brand">
+							<option value="" th:selected="${selectedBrandId == null}">Todas las marcas</option>
+							<option th:each="brand : ${brands}" th:value="${brand.id}" th:text="${brand.brandName}"
+								th:selected="${selectedBrandId == brand.id}"></option>
+						</select>
+					</div>
+
+					<div class="mb-3">
+						<label for="sort" class="form-label">Ordenar por</label>
+						<select class="form-select" id="sort" name="sort">
 							<option value="" th:selected="${sort == null}">Seleccionar orden</option>
 							<option value="0" th:selected="${sort == 0}">Precio: Menor a mayor</option>
 							<option value="1" th:selected="${sort == 1}">Precio: Mayor a menor</option>
@@ -229,8 +242,10 @@
 							<option value="3" th:selected="${sort == 3}">Nombre: Z-A</option>
 							<option value="4" th:selected="${sort == 4}">Más recientes</option>
 						</select>
-					</form>
-				</div>
+					</div>
+
+					<button type="submit" class="btn btn-dark w-100">Aplicar filtros</button>
+				</form>
 
 				<div class="mt-4 pt-3 border-top">
 					<a href="/create-product" class="btn btn-dark w-100 mb-2">
@@ -244,6 +259,7 @@
 		</div>
 
 		<div th:replace="~{Fragments :: productDeleteModal}"></div>
+		
 	</main>
 
 	<footer class="mt-5 border-top" th:replace="~{Fragments :: footer}"></footer>

@@ -44,7 +44,7 @@
 									<div class="col-12">
 										<h6 class="dropdown-header">Categorias</h6>
 										<a th:each="category : ${categories}" class="dropdown-item"
-											th:href="@{/shop/{id}(id=${category.id})}"
+											th:href="@{/shop(categoryId=${category.id})}"
 											th:text="${category.categoryName}">
 											Nombre Categoría
 										</a>
@@ -138,24 +138,24 @@
 			</div>
 		</div>
 
-		<div th:fragment="successMessage">
-			<div th:if="${showSuccessModal}" class="modal fade show" tabindex="-1">
-				<div class="modal-dialog modal-dialog-centered">
-					<div class="modal-content">
-						<div class="modal-header bg-success text-white">
-							<h5 class="modal-title">Operación exitosa</h5>
-							<a th:href="@{/products}" class="btn-close btn-close-white"></a>
-						</div>
-						<div class="modal-body">
-							<p th:text="${successMessage}">Mensaje de éxito</p>
-						</div>
-						<div class="modal-footer">
-							<a th:href="@{/products}" class="btn btn-success">Aceptar</a>
-						</div>
-					</div>
+		<div th:fragment="successMessageModal">
+			<div th:if="${successMessage}" class="container mt-3">
+			  <div class="alert alert-success alert-dismissible fade show" role="alert">
+			    <span th:text="${successMessage}">Mensaje de ejemplo</span>
+			    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			  </div>
+			</div>
+		</div>
+		
+		<div th:fragment="errorMessageModal">
+			<div th:if="${errorMessage}" class="container mt-3">
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<span th:text="${errorMessage}">Mensaje de ejemplo</span>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 				</div>
 			</div>
 		</div>
+
 
 	</main>
 
@@ -237,6 +237,7 @@
 			</div>
 		</div>
 	</footer>
+
 </body>
 
 </html>

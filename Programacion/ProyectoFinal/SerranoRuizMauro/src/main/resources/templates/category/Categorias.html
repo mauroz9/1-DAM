@@ -20,6 +20,9 @@
 			<div class="align-items-center mb-4">
 				<h1 class="fw-bold">Gestión de Categorias</h1>
 			</div>
+			
+			<div th:replace="~{Fragments :: errorMessageModal}"></div>
+			<div th:replace="~{Fragments :: successMessageModal}"></div>
 
 			<div class="text-center m-4">
 				<a href="/create-category" class="btn btn-dark btn-lg">

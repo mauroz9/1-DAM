@@ -48,7 +48,7 @@
 								</div>
 
 								<div th:if="${product.id == null}" class="mb-3">
-									<label for="productName" class="form-label fw-bold">Nombre de la producto</label>
+									<label for="productName" class="form-label fw-bold">Nombre del producto</label>
 									<input type="text" th:field="*{name}" class="form-control" id="productName"
 										required>
 								</div>
@@ -68,7 +68,7 @@
 
 									<div class="mb-3 col-4">
 										<label for="productStock" class="form-label fw-bold">Stock disponible</label>
-										<input type="number" th:field="*{stock}" class="form-control" id="productStock"
+										<input type="number" th:field="*{stock}" min="0" step="1" class="form-control" id="productStock"
 											value="0" required>
 									</div>
 								</div>
