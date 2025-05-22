@@ -77,7 +77,7 @@ public class CategoryController {
 		if (categoryOpt.isPresent()) {
 			productService.unlinkCategory(id);
 			categoryService.deleteById(id);
-			redirectAttributes.addFlashAttribute("successMessage", "Categoría eliminada correctamente");
+			redirectAttributes.addFlashAttribute("successMessage", "Categoría eliminada correctamente, los productos asociados se han ocultado");
 		} else {
 			redirectAttributes.addFlashAttribute("errorMessage", "La categoría no existe o ya fue eliminada");
 		}

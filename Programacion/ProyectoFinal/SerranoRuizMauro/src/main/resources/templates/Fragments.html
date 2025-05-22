@@ -140,13 +140,13 @@
 
 		<div th:fragment="successMessageModal">
 			<div th:if="${successMessage}" class="container mt-3">
-			  <div class="alert alert-success alert-dismissible fade show" role="alert">
-			    <span th:text="${successMessage}">Mensaje de ejemplo</span>
-			    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			  </div>
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<span th:text="${successMessage}">Mensaje de ejemplo</span>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
 			</div>
 		</div>
-		
+
 		<div th:fragment="errorMessageModal">
 			<div th:if="${errorMessage}" class="container mt-3">
 				<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -228,9 +228,12 @@
 					<div class="col-md-4 mb-3 text-center">
 						<h6 class="text-uppercase fw-bold border-bottom pb-2" id="social">Síguenos</h6>
 						<div class="d-flex justify-content-center gap-3 mt-2">
-							<a href="instagram.com" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
-							<a href="tiktok.com" class="text-dark fs-5"><i class="bi bi-tiktok"></i></a>
-							<a href="youtube.com" class="text-dark fs-5"><i class="bi bi-youtube"></i></a>
+							<a href="https://www.instagram.com/" target="_blank" class="text-dark fs-5"><i
+									class="bi bi-instagram"></i></a>
+							<a href="https://www.tiktok.com/es/" target="_blank" class="text-dark fs-5"><i
+									class="bi bi-tiktok"></i></a>
+							<a href="https://www.youtube.com/" target="_blank" class="text-dark fs-5"><i
+									class="bi bi-youtube"></i></a>
 						</div>
 					</div>
 				</div>

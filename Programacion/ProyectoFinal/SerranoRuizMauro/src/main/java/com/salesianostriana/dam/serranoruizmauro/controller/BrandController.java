@@ -104,7 +104,7 @@ public class BrandController {
 		if (brandOpt.isPresent()) {
 			productService.unlinkBrand(id);
 			brandService.deleteById(id);
-			redirectAttributes.addFlashAttribute("successMessage", "Marca eliminada correctamente");
+			redirectAttributes.addFlashAttribute("successMessage", "Marca eliminada correctamente, los productos asociados se han ocultado");
 		} else {
 			redirectAttributes.addFlashAttribute("errorMessage", "La marca no existe o ya fue eliminada");
 		}
